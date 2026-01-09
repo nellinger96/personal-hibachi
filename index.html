@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Hibachi | Culinary Artistry</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+  </style>
+</head>
+<body class="english-active">
+
+  <div class="lang-toggle-container">
+    <button id="langBtn" onclick="toggleLanguage()">ESPAÑOL</button>
+  </div>
+
+  <section class="hero">
+    
+    <div class="hero-video-container">
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="original.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content-centered">
+      
+      <div class="digital-logo">
+        <svg class="logo-icon hat" viewBox="0 0 512 512" width="100" title="chef-hat">
+           <path d="M416 192c0-88.4-71.6-160-160-160S96 103.6 96 192c0 23.4 5.1 45.6 14.3 65.6C63 277 32 320 32 368v64c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32v-64c0-48-31-91-78.3-110.4 9.2-20 14.3-42.2 14.3-65.6zM128 192c0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128-128-57.3-128-128zm320 240H64v-64c0-35.3 28.7-64 64-64h256c35.3 0 64 28.7 64 64v64z"/>
+           <path d="M192 100v180m64-180v180m64-180v180" style="fill:none;stroke:currentColor;stroke-width:20px;stroke-linecap:round;"/> 
+        </svg>
+        <div class="logo-text">PERSONAL HIBACHI</div>
+      </div>
+      
+      <p class="lang-en tagline">THE ULTIMATE AT-HOME DINING EXPERIENCE</p>
+      <p class="lang-es tagline">LA MEJOR EXPERIENCIA CULINARIA EN CASA</p>
+      
+      <a href="#" class="cta-btn">
+        <span class="lang-en">BOOK YOUR DATE</span>
+        <span class="lang-es">RESERVA TU FECHA</span>
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+        <span>EXPLORE</span>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+        </svg>
+    </div>
+
+  </section>
+
+  <section id="menu">
+    <h2 class="section-title">
+      <span class="lang-en">THE <span class="red-accent">MENU</span></span>
+      <span class="lang-es">EL <span class="red-accent">MENÚ</span></span>
+    </h2>
+    
+    <div class="menu-container">
+      <div class="menu-column">
+        <h3>
+          <span class="lang-en">Chef's Special</span>
+          <span class="lang-es">Especial del Chef</span>
+        </h3>
+        <div class="menu-item"><span class="highlight-text lang-en">New York Steak</span><span class="highlight-text lang-es">Bistec Nueva York</span></div>
+        <div class="menu-item"><span class="highlight-text lang-en">Chicken</span><span class="highlight-text lang-es">Pollo</span></div>
+        <div class="menu-item"><span class="highlight-text lang-en">Shrimp</span><span class="highlight-text lang-es">Camarones</span></div>
+        <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
+        <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
+      </div>
+
+      <div class="menu-column">
+        <h3>
+          <span class="lang-en">The Famous</span>
+          <span class="lang-es">El Famoso</span>
+        </h3>
+        <div class="menu-item"><span class="highlight-text lang-en">Filet Mignon</span><span class="highlight-text lang-es">Filete Mignon</span></div>
+        <div class="menu-item"><span class="highlight-text lang-en">Lobster</span><span class="highlight-text lang-es">Langosta</span></div>
+        <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
+        <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
+        <div class="menu-item"><span class="lang-en">Soup & Salad</span><span class="lang-es">Sopa y Ensalada</span></div>
+      </div>
+
+      <div class="menu-column">
+        <h3>
+          <span class="lang-en">Seafood Lover</span>
+          <span class="lang-es">Amante de Mariscos</span>
+        </h3>
+        <div class="menu-item"><span class="highlight-text lang-en">Any Seafood Option</span><span class="highlight-text lang-es">Cualquier Opción de Marisco</span></div>
+        <div class="menu-item"><span class="highlight-text lang-en">Any Seafood Option</span><span class="highlight-text lang-es">Cualquier Opción de Marisco</span></div>
+        <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
+        <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
+        <div class="menu-item"><span class="lang-en">Included Sauces</span><span class="lang-es">Salsas Incluidas</span></div>
+      </div>
+    </div>
+
+    <div class="extras-grid">
+      <div class="extra-box">
+        <h4>
+          <span class="lang-en">APPETIZERS</span>
+          <span class="lang-es">APERITIVOS</span>
+        </h4>
+        <ul>
+          <li><span class="lang-en">Spicy Edamame</span><span class="lang-es">Edamame Picante</span></li>
+          <li>Gyoza</li>
+          <li><span class="lang-en">Shrimp (Shell On)</span><span class="lang-es">Camarones (con cáscara)</span></li>
+        </ul>
+      </div>
+      <div class="extra-box">
+        <h4>
+          <span class="lang-en">SEAFOOD ADD-ONS</span>
+          <span class="lang-es">AGREGADOS DE MARISCOS</span>
+        </h4>
+        <ul>
+          <li><span class="lang-en">Scallops</span><span class="lang-es">Vieiras</span></li>
+          <li><span class="lang-en">Salmon</span><span class="lang-es">Salmón</span></li>
+          <li>Halibut</li>
+          <li><span class="lang-en">Calamari</span><span class="lang-es">Calamares</span></li>
+        </ul>
+      </div>
+      <div class="extra-box">
+        <h4>
+          <span class="lang-en">INCLUDED SAUCES</span>
+          <span class="lang-es">SALSAS INCLUIDAS</span>
+        </h4>
+        <ul>
+          <li><span class="lang-en">Spicy Garlic Butter</span><span class="lang-es">Mantequilla de Ajo Picante</span></li>
+          <li><span class="lang-en">Mustard Sauce</span><span class="lang-es">Salsa de Mostaza</span></li>
+          <li><span class="lang-en">Spicy Mayo</span><span class="lang-es">Mayonesa Picante</span></li>
+          <li><span class="lang-en">Ginger Sauce</span><span class="lang-es">Salsa de Jengibre</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <p class="menu-note">
+      <span class="lang-en">*You may add to any existing menu or create your own menu. Just ask!</span>
+      <span class="lang-es">*Puede agregar a cualquier menú existente o crear su propio menú. ¡Solo pregunte!</span>
+    </p>
+  </section>
+
+  <section class="setup-section">
+    <div class="parallax-bg">
+      <div class="parallax-overlay"></div>
+      <div class="setup-content">
+        <h2>
+          <span class="lang-en">WE BRING THE <span class="red-accent">RESTAURANT</span></span>
+          <span class="lang-es">LLEVAMOS EL <span class="red-accent">RESTAURANTE</span> A TI</span>
+        </h2>
+        <p class="setup-desc">
+          <span class="lang-en">Relax. We handle everything. Our setup includes high-end table linens, dining ware, and the full hibachi grill setup. Designed for 15-30 guests.</span>
+          <span class="lang-es">Relájate. Nosotros nos encargamos de todo. Nuestro servicio incluye mantelería de alta gama, vajilla y la parrilla hibachi completa. Diseñado para 15-30 invitados.</span>
+        </p>
+        <div class="setup-list">
+          <span class="setup-tag"><span class="lang-en">Tables & Chairs</span><span class="lang-es">Mesas y Sillas</span></span>
+          <span class="setup-tag"><span class="lang-en">Linens</span><span class="lang-es">Manteles</span></span>
+          <span class="setup-tag"><span class="lang-en">Silverware</span><span class="lang-es">Cubiertos</span></span>
+          <span class="setup-tag"><span class="lang-en">Plates</span><span class="lang-es">Platos</span></span>
+          <span class="setup-tag"><span class="lang-en">Glass Cups</span><span class="lang-es">Vasos de Vidrio</span></span>
+          <span class="setup-tag"><span class="lang-en">Decorations</span><span class="lang-es">Decoraciones</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="policy-section">
+    <h2 class="section-title">
+      <span class="lang-en">BOOKING <span class="red-accent">POLICY</span></span>
+      <span class="lang-es">POLÍTICA DE <span class="red-accent">RESERVA</span></span>
+    </h2>
+    
+    <div class="policy-grid">
+      <div class="policy-card">
+        <h4>
+          <span class="lang-en">DEPOSIT</span>
+          <span class="lang-es">DEPÓSITO</span>
+        </h4>
+        <p>
+          <span class="lang-en">A deposit is required to secure your date. Please note that deposits are non-refundable if the event is canceled.</span>
+          <span class="lang-es">Se requiere un depósito para asegurar su fecha. Tenga en cuenta que los depósitos no son reembolsables si se cancela el evento.</span>
+        </p>
+      </div>
+      <div class="policy-card">
+        <h4>
+          <span class="lang-en">MINIMUMS</span>
+          <span class="lang-es">MÍNIMOS</span>
+        </h4>
+        <p>
+          <span class="lang-en">We have a 15-Guest (Adult) minimum requirement for all bookings.</span>
+          <span class="lang-es">Tenemos un requisito mínimo de 15 invitados (adultos) para todas las reservas.</span>
+        </p>
+      </div>
+      <div class="policy-card">
+        <h4>
+          <span class="lang-en">LOCATION</span>
+          <span class="lang-es">UBICACIÓN</span>
+        </h4>
+        <p>
+          <span class="lang-en">Serving the San Bernardino area. Any location 20+ miles from our base includes a travel fee.</span>
+          <span class="lang-es">Sirviendo el área de San Bernardino. Cualquier ubicación a más de 20 millas de nuestra base incluye una tarifa de viaje.</span>
+        </p>
+      </div>
+      <div class="policy-card">
+        <h4>
+          <span class="lang-en">TIMING</span>
+          <span class="lang-es">TIEMPO</span>
+        </h4>
+        <p>
+          <span class="lang-en">We ask that guests arrive on time. We have a wait time tolerance of 15 minutes before cooking begins.</span>
+          <span class="lang-es">Pedimos que los invitados lleguen a tiempo. Tenemos una tolerancia de espera de 15 minutos antes de comenzar a cocinar.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <h2 class="section-title">
+      <span class="lang-en">CLIENT <span class="red-accent">LOVE</span></span>
+      <span class="lang-es">CLIENTES <span class="red-accent">FELICES</span></span>
+    </h2>
+
+    <div class="reviews-grid">
+      
+      <div class="review-card">
+        <div class="quote-icon">“</div>
+        <p class="review-text">
+          Best Hibachi I have had, to keep it short and sweet but you will come to the conclusion that this hibachi beats out big name places by a mile.        
+        </p>
+        <div class="review-author">
+           - Daniel F.
+           <span class="verified-badge">✔ Verified on Google</span>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="review-card">
+        <div class="quote-icon">“</div>
+        <p class="review-text">
+          Had a great time, food was bomb🔥. Chef was chill and funny through the whole time. Highly recommend for a good time.        
+        </p>
+        <div class="review-author">
+           - Micheal F.
+           <span class="verified-badge">✔ Verified on Google</span>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="review-card">
+        <div class="quote-icon">“</div>
+        <p class="review-text">
+          Can’t recommend him enough. He comes with everything he needs, sets up, entertaining and the food was amazing!!        
+        </p>
+        <div class="review-author">
+           - Marcella P.
+           <span class="verified-badge">✔ Verified on Google</span>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="video-grid-section">
+    <h2 class="section-title">THE <span class="red-accent">EXPERIENCE</span></h2>
+    
+    <div class="video-grid">
+      <div class="video-card">
+        <video class="interactive-video" loop muted playsinline>
+          <source src="fire1.mp4" type="video/mp4">
+        </video>
+        <div class="vid-overlay">THE HEAT</div>
+      </div>
+
+      <div class="video-card">
+        <video class="interactive-video" loop muted playsinline>
+          <source src="fire2.mp4" type="video/mp4">
+        </video>
+        <div class="vid-overlay">THE SKILL</div>
+      </div>
+
+      <div class="video-card">
+        <video class="interactive-video" loop muted playsinline>
+          <source src="party.mp4" type="video/mp4">
+        </video>
+        <div class="vid-overlay">THE PARTY</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">PERSONAL <span class="red-accent">HIBACHI</span></div>
+    <p class="footer-sub">CULINARY ARTISTRY BY CHEF JORGE GALICIA</p>
+    
+    <a href="tel:9097255030" class="contact-link">(909) 725-5030</a>
+    
+    <a href="https://instagram.com/personal.hibachi" class="social-link">
+      @personal.hibachi
+    </a>
+    
+    <div class="copyright">
+      <small>&copy; 2026 Personal Hibachi. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // LANGUAGE TOGGLE
+    function toggleLanguage() {
+      const body = document.body;
+      const btn = document.getElementById('langBtn');
+      
+      if (body.classList.contains('english-active')) {
+        body.classList.remove('english-active');
+        body.classList.add('spanish-active');
+        btn.innerText = "ENGLISH";
+      } else {
+        body.classList.remove('spanish-active');
+        body.classList.add('english-active');
+        btn.innerText = "ESPAÑOL";
+      }
+    }
+
+    // INTERACTIVE VIDEO HOVER LOGIC
+    const videos = document.querySelectorAll('.interactive-video');
+
+    videos.forEach(video => {
+        video.pause(); // Ensure paused at start
+        
+        video.parentElement.addEventListener('mouseenter', () => {
+            video.play();
+        });
+
+        video.parentElement.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    });
+  </script>
+</body>
+</html>
