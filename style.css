@@ -9,6 +9,10 @@
     --font-body: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -29,6 +33,112 @@ h1, h2, h3 {
 .red-accent {
     color: var(--hibachi-red);
     text-shadow: 0 0 15px rgba(255, 62, 62, 0.6);
+}
+
+/* --- FLOATING MENU BUTTON --- */
+.menu-toggle-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 1001;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.menu-toggle-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--hibachi-red);
+}
+
+.menu-toggle-btn .bar {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* --- FULL SCREEN OVERLAY --- */
+.nav-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1002;
+    top: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, 0.98);
+    overflow-y: hidden;
+    transition: 0.5s;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlay-content {
+    text-align: center;
+    width: 100%;
+}
+
+.overlay-content a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: var(--font-head);
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.overlay-content a:hover {
+    color: var(--hibachi-red);
+    transform: scale(1.05);
+}
+
+.nav-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+.nav-close-btn:hover {
+    color: var(--hibachi-red);
+}
+
+.overlay-lang-btn {
+    margin-top: 30px;
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+    padding: 15px 30px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.overlay-lang-btn:hover {
+    border-color: var(--hibachi-red);
+    color: var(--hibachi-red);
 }
 
 /* --- HERO SECTION (FULL WIDTH) --- */
@@ -53,14 +163,14 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.6); /* Darken for readability */
+    filter: brightness(0.6);
 }
 
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; 
     width: 100%; height: 100%;
-    background: radial-gradient(circle, transparent 20%, #050505 90%); /* Vignette */
+    background: radial-gradient(circle, transparent 20%, #050505 90%);
     z-index: -1;
 }
 
@@ -145,7 +255,7 @@ h1, h2, h3 {
     60% {transform: translateX(-50%) translateY(-5px);}
 }
 
-/* --- THE MENU (GLASSMORPHISM) --- */
+/* --- THE MENU --- */
 section#menu {
     background: url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, #050505, #1a0505);
     padding: 80px 20px;
@@ -161,7 +271,7 @@ section#menu {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for mobile */
     gap: 40px;
 }
 
@@ -296,6 +406,17 @@ section#menu {
 .review-author { font-weight: bold; color: white; }
 .stars { color: #eab308; margin-top: 5px; }
 
+/* --- VERIFIED REVIEW BADGE --- */
+.verified-badge {
+    display: block;
+    font-size: 0.75rem;
+    color: #4ade80;
+    font-weight: normal;
+    margin-top: 4px;
+    font-family: var(--font-body);
+    opacity: 0.8;
+}
+
 /* --- INTERACTIVE VIDEO GRID --- */
 .video-grid-section {
     padding: 80px 20px;
@@ -306,7 +427,7 @@ section#menu {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for mobile */
     gap: 20px;
 }
 
@@ -380,12 +501,7 @@ footer {
 .contact-link:hover, .social-link:hover { color: var(--hibachi-red); }
 .copyright { margin-top: 60px; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e293b; padding-top: 20px; }
 
-/* --- LANG TOGGLE --- */
-.lang-toggle-container { position: absolute; top: 20px; right: 20px; z-index: 100; }
-#langBtn {
-    background: rgba(0,0,0,0.8); color: white; border: 1px solid white;
-    padding: 10px 20px; font-family: var(--font-head); cursor: pointer; font-weight: bold;
-}
+/* --- LANGUAGE LOGIC (Utility) --- */
 body.english-active .lang-es { display: none !important; }
 body.spanish-active .lang-en { display: none !important; }
 
@@ -394,15 +510,5 @@ body.spanish-active .lang-en { display: none !important; }
     .logo-text { font-size: 2.5rem; }
     .section-title { font-size: 2rem; }
     .video-card { height: 350px; }
-}
-
-/* --- VERIFIED REVIEW BADGE --- */
-.verified-badge {
-    display: block; /* Puts it on a new line below the name */
-    font-size: 0.75rem;
-    color: #4ade80; /* Bright Green color for trust */
-    font-weight: normal;
-    margin-top: 4px;
-    font-family: var(--font-body);
-    opacity: 0.8;
+    .overlay-content a { font-size: 1.8rem; }
 }
