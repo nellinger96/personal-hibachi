@@ -8,8 +8,35 @@
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+    /* --- CRITICAL FIXES FOR LANGUAGE TOGGLING --- */
+    body.english-active .lang-es { display: none !important; }
+    body.spanish-active .lang-en { display: none !important; }
+    
+    /* --- PRICING BADGES --- */
+    .price-badge {
+        background-color: #d32f2f;
+        color: white;
+        font-size: 0.8rem;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 10px;
+        font-weight: 600;
+        vertical-align: middle;
+    }
+    
+    .verified-link {
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .verified-link:hover {
+        text-decoration: underline;
+    }
   </style>
 </head>
+
 <body class="english-active">
 
   <div class="menu-toggle-btn" onclick="toggleMenu()">
@@ -19,7 +46,7 @@
   </div>
 
   <div class="nav-overlay" id="navOverlay">
-    <div class="nav-close-btn" onclick="toggleMenu()">&times;</div>
+    <div class="nav-close-btn" onclick="toggleMenu()">×</div>
     
     <div class="overlay-content">
       <a href="#home" onclick="toggleMenu()">HOME</a>
@@ -46,14 +73,14 @@
     
     <div class="hero-content-centered">
       
-      <img src="logo.png"Personal Hibachi Logo" class="hero-logo">
+      <img src="logo.png" alt="Personal Hibachi Logo" class="hero-logo">
       
       <div class="logo-text">PERSONAL HIBACHI</div>
       
       <p class="lang-en tagline">THE ULTIMATE AT-HOME DINING EXPERIENCE</p>
       <p class="lang-es tagline">LA MEJOR EXPERIENCIA CULINARIA EN CASA</p>
       
-      <a href="#" class="cta-btn">
+      <a href="#contact" class="cta-btn">
         <span class="lang-en">BOOK YOUR DATE</span>
         <span class="lang-es">RESERVA TU FECHA</span>
       </a>
@@ -79,6 +106,7 @@
         <h3>
           <span class="lang-en">Chef's Special</span>
           <span class="lang-es">Especial del Chef</span>
+          <span class="price-badge">$60/pp</span> 
         </h3>
         <div class="menu-item"><span class="highlight-text lang-en">New York Steak</span><span class="highlight-text lang-es">Bistec Nueva York</span></div>
         <div class="menu-item"><span class="highlight-text lang-en">Chicken</span><span class="highlight-text lang-es">Pollo</span></div>
@@ -91,6 +119,7 @@
         <h3>
           <span class="lang-en">The Famous</span>
           <span class="lang-es">El Famoso</span>
+           <span class="price-badge">$75/pp</span> 
         </h3>
         <div class="menu-item"><span class="highlight-text lang-en">Filet Mignon</span><span class="highlight-text lang-es">Filete Mignon</span></div>
         <div class="menu-item"><span class="highlight-text lang-en">Lobster</span><span class="highlight-text lang-es">Langosta</span></div>
@@ -103,9 +132,16 @@
         <h3>
           <span class="lang-en">Seafood Lover</span>
           <span class="lang-es">Amante de Mariscos</span>
+           <span class="price-badge">$85/pp</span> 
         </h3>
-        <div class="menu-item"><span class="highlight-text lang-en">Any Seafood Option</span><span class="highlight-text lang-es">Cualquier Opción de Marisco</span></div>
-        <div class="menu-item"><span class="highlight-text lang-en">Any Seafood Option</span><span class="highlight-text lang-es">Cualquier Opción de Marisco</span></div>
+        <div class="menu-item">
+            <span class="highlight-text lang-en">Choice of Two Seafoods:</span>
+            <span class="highlight-text lang-es">Elección de dos mariscos:</span>
+        </div>
+        <div class="menu-item" style="font-size: 0.9em; opacity: 0.9;">
+            <span class="lang-en">Lobster, Scallops, Salmon, Calamari</span>
+            <span class="lang-es">Langosta, Vieiras, Salmón, Calamares</span>
+        </div>
         <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
         <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
         <div class="menu-item"><span class="lang-en">Included Sauces</span><span class="lang-es">Salsas Incluidas</span></div>
@@ -197,16 +233,18 @@
           <span class="lang-es">Se requiere un depósito para asegurar su fecha. Tenga en cuenta que los depósitos no son reembolsables si se cancela el evento.</span>
         </p>
       </div>
+      
       <div class="policy-card">
         <h4>
-          <span class="lang-en">MINIMUMS</span>
-          <span class="lang-es">MÍNIMOS</span>
+          <span class="lang-en">GUEST COUNT</span>
+          <span class="lang-es">INVITADOS</span>
         </h4>
         <p>
-          <span class="lang-en">We have a 15-Guest (Adult) minimum requirement for all bookings.</span>
-          <span class="lang-es">Tenemos un requisito mínimo de 15 invitados (adultos) para todas las reservas.</span>
+          <span class="lang-en">Standard pricing applies to 15+ guests. Smaller groups (under 15) are welcome at a flat-rate fee.</span>
+          <span class="lang-es">El precio estándar aplica a 15+ invitados. Grupos más pequeños (menos de 15) son bienvenidos con una tarifa fija.</span>
         </p>
       </div>
+
       <div class="policy-card">
         <h4>
           <span class="lang-en">LOCATION</span>
@@ -245,10 +283,10 @@
         </p>
         <div class="review-author">
            - Jonathan D.
-           <span class="verified-badge">
+           <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-badge verified-link">
              <span class="lang-en">✔ Verified on Google</span>
              <span class="lang-es">✔ Verificado en Google</span>
-           </span>
+           </a>
         </div>
         <div class="stars">★★★★★</div>
       </div>
@@ -261,10 +299,10 @@
         </p>
         <div class="review-author">
            - Maria G.
-           <span class="verified-badge">
+           <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-badge verified-link">
              <span class="lang-en">✔ Verified on Google</span>
              <span class="lang-es">✔ Verificado en Google</span>
-           </span>
+           </a>
         </div>
         <div class="stars">★★★★★</div>
       </div>
@@ -277,10 +315,10 @@
         </p>
         <div class="review-author">
            - Anthony B.
-           <span class="verified-badge">
+           <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-badge verified-link">
              <span class="lang-en">✔ Verified on Google</span>
              <span class="lang-es">✔ Verificado en Google</span>
-           </span>
+           </a>
         </div>
         <div class="stars">★★★★★</div>
       </div>
@@ -327,7 +365,7 @@
   </section>
 
   <footer id="contact">
-    <img src="logo.png"Personal Hibachi Logo" class="footer-logo-img">
+    <img src="logo.png" alt="Personal Hibachi Logo" class="footer-logo-img">
     
     <div class="footer-logo-text">PERSONAL <span class="red-accent">HIBACHI</span></div>
     <p class="footer-sub">CULINARY ARTISTRY BY CHEF JORGE GALICIA</p>
@@ -339,7 +377,7 @@
     </a>
     
     <div class="copyright">
-      <small>&copy; 2026 Personal Hibachi. All Rights Reserved.</small>
+      <small>© 2026 Personal Hibachi. All Rights Reserved.</small>
     </div>
   </footer>
 
