@@ -512,3 +512,39 @@ body.spanish-active .lang-en { display: none !important; }
     .video-card { height: 350px; }
     .overlay-content a { font-size: 1.8rem; }
 }
+
+/* --- NEW LOGO STYLES (Clean Transparency) --- */
+.hero-logo {
+    width: 150px; /* Slightly larger to show detail */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    opacity: 0.9; /* Subtle blend */
+    filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.6)); /* Strong red glow behind the paint */
+    transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05); /* subtle pop on hover */
+}
+
+.footer-logo-img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    opacity: 0.8;
+}
+
+.footer-logo-text {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Hide old text logos */
+.digital-logo, .footer-logo {
+    display: none;
+}
