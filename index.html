@@ -5,35 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Hibachi | Culinary Artistry</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-
-    /* --- CRITICAL FIXES FOR LANGUAGE TOGGLING --- */
     body.english-active .lang-es { display: none !important; }
     body.spanish-active .lang-en { display: none !important; }
-    
-    /* --- PRICING BADGES --- */
-    .price-badge {
-        background-color: #d32f2f;
-        color: white;
-        font-size: 0.8rem;
-        padding: 2px 6px;
-        border-radius: 4px;
-        margin-left: 10px;
-        font-weight: 600;
-        vertical-align: middle;
-    }
-    
-    .verified-link {
-        color: #4CAF50;
-        text-decoration: none;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    .verified-link:hover {
-        text-decoration: underline;
-    }
   </style>
 </head>
 
@@ -47,408 +24,122 @@
 
   <div class="nav-overlay" id="navOverlay">
     <div class="nav-close-btn" onclick="toggleMenu()">×</div>
-    
     <div class="overlay-content">
-      <a href="#home" onclick="toggleMenu()">HOME</a>
-      <a href="#menu" onclick="toggleMenu()">THE MENU</a>
-      <a href="#setup" onclick="toggleMenu()">SETUP</a>
-      <a href="#reviews" onclick="toggleMenu()">REVIEWS</a>
+      <a href="index.html" onclick="toggleMenu()">HOME</a>
+      <a href="menu.html" onclick="toggleMenu()">THE MENU</a>
+      <a href="info.html" onclick="toggleMenu()">SETUP & FAQ</a>
+      <a href="index.html#reviews" onclick="toggleMenu()">REVIEWS</a>
       <a href="#contact" onclick="toggleMenu()">CONTACT</a>
-      
-      <button class="overlay-lang-btn" onclick="toggleLanguage(); toggleMenu()">
-        SWITCH LANGUAGE / IDIOMA
-      </button>
+      <button class="overlay-lang-btn" onclick="toggleLanguage(); toggleMenu()">SWITCH LANGUAGE / IDIOMA</button>
     </div>
   </div>
 
   <section class="hero" id="home">
-    
     <div class="hero-video-container">
       <video autoplay loop muted playsinline class="hero-video">
         <source src="original.mp4" type="video/mp4">
       </video>
     </div>
-
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay" style="background: radial-gradient(circle, transparent 20%, #1a0000 90%);"></div>
     
     <div class="hero-content-centered">
-      
       <img src="logo.png" alt="Personal Hibachi Logo" class="hero-logo">
-      
       <div class="logo-text">PERSONAL HIBACHI</div>
-      
       <p class="lang-en tagline">THE ULTIMATE AT-HOME DINING EXPERIENCE</p>
-      <p class="lang-es tagline">SABOR, FUEGO Y DIVERSION PARA CUALQUIER OCASION</p>
+      <p class="lang-es tagline">SABOR, FUEGO Y DIVERSION PARA CADA OCASION</p>
       
       <a href="sms:+19097255030?body=Hi Chef Jorge, I am interested in booking a hibachi party!" class="cta-btn">
         <span class="lang-en">BOOK YOUR DATE</span>
         <span class="lang-es">RESERVA TU FECHA</span>
       </a>
     </div>
-
-    <div class="scroll-indicator">
-        <span>EXPLORE</span>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-        </svg>
-    </div>
-
   </section>
 
-  <section id="menu">
-    <h2 class="section-title">
-      <span class="lang-en">THE <span class="red-accent">MENU</span></span>
-      <span class="lang-es">EL <span class="red-accent">MENÚ</span></span>
-    </h2>
-    
-    <div class="menu-container">
-      <div class="menu-column">
-        <h3>
-          <span class="lang-en">Chef's Special</span>
-          <span class="lang-es">Especial del Chef</span>
-          <span class="price-badge">$60/pp</span> 
-        </h3>
-        <div class="menu-item"><span class="highlight-text lang-en">New York Steak</span><span class="highlight-text lang-es">Bistec Nueva York</span></div>
-        <div class="menu-item"><span class="highlight-text lang-en">Chicken</span><span class="highlight-text lang-es">Pollo</span></div>
-        <div class="menu-item"><span class="highlight-text lang-en">Shrimp</span><span class="highlight-text lang-es">Camarones</span></div>
-        <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
-        <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-image">
+         <img src="chef.jpg" alt="Chef Jorge Galicia">
       </div>
-
-      <div class="menu-column">
-        <h3>
-          <span class="lang-en">The Famous</span>
-          <span class="lang-es">El Famoso</span>
-           <span class="price-badge">$80/pp</span> 
-        </h3>
-        <div class="menu-item"><span class="highlight-text lang-en">Filet Mignon</span><span class="highlight-text lang-es">Filete Mignon</span></div>
-        <div class="menu-item"><span class="highlight-text lang-en">Lobster</span><span class="highlight-text lang-es">Langosta</span></div>
-        <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
-        <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
-        <div class="menu-item"><span class="lang-en">Soup & Salad</span><span class="lang-es">Sopa y Ensalada</span></div>
-      </div>
-
-      <div class="menu-column">
-        <h3>
-          <span class="lang-en">Seafood Lover</span>
-          <span class="lang-es">Amante de Mariscos</span>
-           <span class="price-badge">$65 - $100/pp</span> 
-        </h3>
-        <div class="menu-item">
-            <span class="highlight-text lang-en">Choice of Two Seafoods:</span>
-            <span class="highlight-text lang-es">Elección de dos mariscos:</span>
-        </div>
-        <div class="menu-item" style="font-size: 0.9em; opacity: 0.9;">
-            <span class="lang-en">Lobster, Scallops, Salmon, Calamari</span>
-            <span class="lang-es">Langosta, Vieiras, Salmón, Calamares</span>
-        </div>
-        <div class="menu-item"><span class="lang-en">Fried Rice</span><span class="lang-es">Arroz Frito</span></div>
-        <div class="menu-item"><span class="lang-en">Hibachi Vegetables</span><span class="lang-es">Vegetales Hibachi</span></div>
-        <div class="menu-item"><span class="lang-en">Included Sauces</span><span class="lang-es">Salsas Incluidas</span></div>
-      </div>
-    </div>
-
-    <div class="extras-grid">
-      <div class="extra-box">
-        <h4>
-          <span class="lang-en">APPETIZERS</span>
-          <span class="lang-es">APERITIVOS</span>
-        </h4>
-        <ul>
-          <li><span class="lang-en">Spicy Edamame</span><span class="lang-es">Edamame Picante</span></li>
-          <li>Gyoza</li>
-          <li><span class="lang-en">Shrimp (Shell On)</span><span class="lang-es">Camarones (con cáscara)</span></li>
-        </ul>
-      </div>
-      <div class="extra-box">
-        <h4>
-          <span class="lang-en">SEAFOOD ADD-ONS</span>
-          <span class="lang-es">AGREGADOS DE MARISCOS</span>
-        </h4>
-        <ul>
-          <li><span class="lang-en">Scallops</span><span class="lang-es">Vieiras</span></li>
-          <li><span class="lang-en">Salmon</span><span class="lang-es">Salmón</span></li>
-          <li>Halibut</li>
-          <li><span class="lang-en">Calamari</span><span class="lang-es">Calamares</span></li>
-        </ul>
-      </div>
-      
-      <div class="extra-box">
-        <h4>
-          <span class="lang-en">INCLUDED SAUCES</span>
-          <span class="lang-es">SALSAS INCLUIDAS</span>
-        </h4>
-        <ul>
-          <li><span class="lang-en">Spicy Garlic Butter</span><span class="lang-es">Mantequilla de Ajo Picante</span></li>
-          <li>Sriracha</li>
-        </ul>
-      </div>
-      
-      <div class="extra-box">
-        <h4>
-          <span class="lang-en">PREMIUM SAUCES (+$)</span>
-          <span class="lang-es">SALSAS PREMIUM (+$)</span>
-        </h4>
-        <ul>
-          <li><span class="lang-en">Mustard Sauce</span><span class="lang-es">Salsa de Mostaza</span></li>
-          <li><span class="lang-en">Spicy Mayo</span><span class="lang-es">Mayonesa Picante</span></li>
-          <li><span class="lang-en">Ginger Sauce</span><span class="lang-es">Salsa de Jengibre</span></li>
-          <li><span class="lang-en">Seafood Sauce</span><span class="lang-es">Salsa de Mariscos</span></li>
-        </ul>
-      </div>
-    </div>
-    
-    <p class="menu-note">
-      <span class="lang-en">*You may add to any existing menu or create your own menu. Just ask!</span>
-      <span class="lang-es">*Puede agregar a cualquier menú existente o crear su propio menú. ¡Solo pregunte!</span>
-    </p>
-  </section>
-
- <section class="setup-section" id="setup">
-    <div class="parallax-bg">
-      <div class="parallax-overlay"></div>
-      <div class="setup-content">
-        <h2>
-          <span class="lang-en">WE BRING THE <span class="red-accent">RESTAURANT</span></span>
-          <span class="lang-es">LLEVAMOS EL <span class="red-accent">RESTAURANTE</span> A TI</span>
-        </h2>
-        
-        <div class="setup-fee-display" style="margin-top: 10px; margin-bottom: 30px;">
-            <span style="font-family: 'Oswald'; font-size: 1.6rem; color: #ff3e3e; font-weight: bold; text-shadow: 0 0 15px rgba(255, 62, 62, 0.4); letter-spacing: 1px;">
-                SETUP FEE: $250
-            </span>
-        </div>
-
-        <p class="setup-desc">
-          <span class="lang-en">Relax. We handle everything. Our setup includes high-end table linens, dining ware, and the full hibachi grill setup. Standard setup covers 15 guests.</span>
-          <span class="lang-es">Relájate. Nosotros nos encargamos de todo. Nuestro servicio incluye mantelería de alta gama, vajilla y la parrilla hibachi completa. La configuración estándar cubre 15 invitados.</span>
-        </p>
-
-        <div class="setup-list">
-          <span class="setup-tag"><span class="lang-en">Tables & Chairs</span><span class="lang-es">Mesas y Sillas</span></span>
-          <span class="setup-tag"><span class="lang-en">Linens</span><span class="lang-es">Manteles</span></span>
-          <span class="setup-tag"><span class="lang-en">Silverware</span><span class="lang-es">Cubiertos</span></span>
-          <span class="setup-tag"><span class="lang-en">Plates</span><span class="lang-es">Platos</span></span>
-          <span class="setup-tag"><span class="lang-en">Glass Cups</span><span class="lang-es">Vasos de Vidrio</span></span>
-          <span class="setup-tag"><span class="lang-en">Decorations</span><span class="lang-es">Decoraciones</span></span>
-        </div>
-
-        <p style="margin-top: 30px; font-size: 0.9rem; color: #ccc; font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <span class="lang-en">*Setup price varies for different styles and guest counts. To see different styles or for custom requests, please click "Book Now" or call us.</span>
-            <span class="lang-es">*El precio de instalación varía según el estilo y número de invitados. Para ver diferentes estilos o solicitudes personalizadas, haga clic en "Reserva tu fecha" o llámenos.</span>
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="policy-section" id="policy">
-    <h2 class="section-title">
-      <span class="lang-en">BOOKING <span class="red-accent">POLICY</span></span>
-      <span class="lang-es">POLÍTICA DE <span class="red-accent">RESERVA</span></span>
-    </h2>
-    
-    <div class="policy-grid">
-      <div class="policy-card">
-        <h4>
-          <span class="lang-en">DEPOSIT</span>
-          <span class="lang-es">DEPÓSITO</span>
-        </h4>
-        <p>
-          <span class="lang-en">A deposit is required to secure your date. Please note that deposits are non-refundable if the event is canceled.</span>
-          <span class="lang-es">Se requiere un depósito para asegurar su fecha. Tenga en cuenta que los depósitos no son reembolsables si se cancela el evento.</span>
-        </p>
-      </div>
-      
-      <div class="policy-card">
-        <h4>
-          <span class="lang-en">GUEST COUNT</span>
-          <span class="lang-es">INVITADOS</span>
-        </h4>
-        <p>
-          <span class="lang-en">Standard pricing applies to 15+ guests. Smaller groups (under 15) are welcome at a flat-rate fee.</span>
-          <span class="lang-es">El precio estándar aplica a 15+ invitados. Grupos más pequeños (menos de 15) son bienvenidos con una tarifa fija.</span>
-        </p>
-      </div>
-
-      <div class="policy-card">
-        <h4>
-          <span class="lang-en">LOCATION</span>
-          <span class="lang-es">UBICACIÓN</span>
-        </h4>
-        <p>
-          <span class="lang-en">Serving the San Bernardino area. Any location 20+ miles from our base includes a travel fee.</span>
-          <span class="lang-es">Sirviendo el área de San Bernardino. Cualquier ubicación a más de 20 millas de nuestra base incluye una tarifa de viaje.</span>
-        </p>
-      </div>
-      <div class="policy-card">
-        <h4>
-          <span class="lang-en">TIMING</span>
-          <span class="lang-es">TIEMPO</span>
-        </h4>
-        <p>
-          <span class="lang-en">We ask that guests arrive on time. We have a wait time tolerance of 15 minutes before cooking begins.</span>
-          <span class="lang-es">Pedimos que los invitados lleguen a tiempo. Tenemos una tolerancia de espera de 15 minutos antes de comenzar a cocinar.</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="reviews">
-    <h2 class="section-title">
-      <span class="lang-en">CLIENT <span class="red-accent">LOVE</span></span>
-      <span class="lang-es">CLIENTES <span class="red-accent">FELICES</span></span>
-    </h2>
-
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="quote-icon">“</div>
-        <p class="review-text">
-          <span class="lang-en">We hired Chef Jorge for our anniversary and it was spectacular. The food was hot, the show was hilarious, and he even cleaned up afterwards. Better than Benihana!</span>
-          <span class="lang-es">Contratamos al Chef Jorge para nuestro aniversario y fue espectacular. La comida estaba caliente, el espectáculo fue divertidísimo y limpió todo después. ¡Mejor que Benihana!</span>
-        </p>
-        <div class="review-author">
-           - Jonathan D.
-           <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-badge verified-link">
-             <span class="lang-en">✔ Verified on Google</span>
-             <span class="lang-es">✔ Verificado en Google</span>
-           </a>
-        </div>
-        <div class="stars">★★★★★</div>
-      </div>
-
-      <div class="review-card">
-        <div class="quote-icon">“</div>
-        <p class="review-text">
-          <span class="lang-en">I was hesitant to have hibachi in my backyard, but the setup was professional and safe. The filet mignon melted in my mouth. 10/10 experience.</span>
-          <span class="lang-es">Dudaba en tener hibachi en mi patio trasero, pero la organización fue profesional y segura. El filete miñón se deshacía en la boca. Experiencia 10/10.</span>
-        </p>
-        <div class="review-author">
-           - Maria G.
-           <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-badge verified-link">
-             <span class="lang-en">✔ Verified on Google</span>
-             <span class="lang-es">✔ Verificado en Google</span>
-           </a>
-        </div>
-        <div class="stars">★★★★★</div>
-      </div>
-
-      <div class="review-card">
-        <div class="quote-icon">“</div>
-        <p class="review-text">
-          <span class="lang-en">If you are looking for a chef in San Bernardino, look no further. Punctual, polite, and an amazing cook. My kids loved the volcano trick!</span>
-          <span class="lang-es">Si buscas un chef en San Bernardino, no busques más. Puntual, educado y un cocinero increíble. ¡A mis hijos les encantó el truco del volcán!</span>
-        </p>
-        <div class="review-author">
-           - Anthony B.
-           <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-badge verified-link">
-             <span class="lang-en">✔ Verified on Google</span>
-             <span class="lang-es">✔ Verificado en Google</span>
-           </a>
-        </div>
-        <div class="stars">★★★★★</div>
+      <div class="about-text">
+         <h2>
+            <span class="lang-en">MEET CHEF <span class="red-accent">JORGE</span></span>
+            <span class="lang-es">CONOCE AL CHEF <span class="red-accent">JORGE</span></span>
+         </h2>
+         <p>
+            <span class="lang-en">With over 30 years of experience behind the grill, Chef Jorge brings more than just food—he brings a performance.</span>
+            <span class="lang-es">Con más de 30 años de experiencia detrás de la parrilla, el Chef Jorge trae más que comida: trae un espectáculo.</span>
+         </p>
+         <br>
+         <a href="menu.html" class="cta-btn" style="padding: 10px 30px; font-size: 1rem;">
+            <span class="lang-en">VIEW MENU</span><span class="lang-es">VER MENÚ</span>
+         </a>
       </div>
     </div>
   </section>
 
   <section class="video-grid-section">
     <h2 class="section-title">
-      <span class="lang-en">THE <span class="red-accent">EXPERIENCE</span></span>
-      <span class="lang-es">LA <span class="red-accent">EXPERIENCIA</span></span>
+      <span class="lang-en">THE <span class="red-accent">EXPERIENCE</span></span><span class="lang-es">LA <span class="red-accent">EXPERIENCIA</span></span>
     </h2>
-    
     <div class="video-grid">
       <a href="heat.html" class="video-card">
-        <video class="interactive-video" loop muted playsinline>
-          <source src="fire1.mp4" type="video/mp4">
-        </video>
-        <div class="vid-overlay">
-          <div class="vid-title">
-            <span class="lang-en">THE HEAT</span>
-            <span class="lang-es">EL CALOR</span>
-          </div>
-          <div class="click-indicator">CLICK TO VIEW</div>
-        </div>
+        <video class="interactive-video" loop muted playsinline><source src="fire1.mp4" type="video/mp4"></video>
+        <div class="vid-overlay"><div class="vid-title"><span class="lang-en">THE HEAT</span><span class="lang-es">EL CALOR</span></div><div class="click-indicator">CLICK TO VIEW</div></div>
       </a>
-
       <a href="skill.html" class="video-card">
-        <video class="interactive-video" loop muted playsinline>
-          <source src="fire2.mp4" type="video/mp4">
-        </video>
-        <div class="vid-overlay">
-          <div class="vid-title">
-            <span class="lang-en">THE SKILL</span>
-            <span class="lang-es">LA HABILIDAD</span>
-          </div>
-          <div class="click-indicator">CLICK TO VIEW</div>
-        </div>
+        <video class="interactive-video" loop muted playsinline><source src="fire2.mp4" type="video/mp4"></video>
+        <div class="vid-overlay"><div class="vid-title"><span class="lang-en">THE SKILL</span><span class="lang-es">LA HABILIDAD</span></div><div class="click-indicator">CLICK TO VIEW</div></div>
       </a>
-
       <a href="party.html" class="video-card">
-        <video class="interactive-video" loop muted playsinline>
-          <source src="party.mp4" type="video/mp4">
-        </video>
-        <div class="vid-overlay">
-          <div class="vid-title">
-            <span class="lang-en">THE PARTY</span>
-            <span class="lang-es">LA FIESTA</span>
-          </div>
-          <div class="click-indicator">CLICK TO VIEW</div>
-        </div>
+        <video class="interactive-video" loop muted playsinline><source src="party.mp4" type="video/mp4"></video>
+        <div class="vid-overlay"><div class="vid-title"><span class="lang-en">THE PARTY</span><span class="lang-es">LA FIESTA</span></div><div class="click-indicator">CLICK TO VIEW</div></div>
       </a>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="reviews">
+    <h2 class="section-title">
+      <span class="lang-en">CLIENT <span class="red-accent">LOVE</span></span><span class="lang-es">CLIENTES <span class="red-accent">FELICES</span></span>
+    </h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="quote-icon">“</div>
+        <p class="review-text">
+          <span class="lang-en">Better than Benihana! The food was hot, the show was hilarious.</span><span class="lang-es">¡Mejor que Benihana! La comida estaba caliente, el show divertidísimo.</span>
+        </p>
+        <div class="review-author">- Jonathan D. <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-link">✔ Verified</a></div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="review-card">
+        <div class="quote-icon">“</div>
+        <p class="review-text">
+          <span class="lang-en">The filet mignon melted in my mouth. 10/10 experience.</span><span class="lang-es">El filete miñón se deshacía en la boca. Experiencia 10/10.</span>
+        </p>
+        <div class="review-author">- Maria G. <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-link">✔ Verified</a></div>
+        <div class="stars">★★★★★</div>
+      </div>
     </div>
   </section>
 
   <footer id="contact">
     <img src="logo.png" alt="Personal Hibachi Logo" class="footer-logo-img">
-    
     <div class="footer-logo-text">PERSONAL <span class="red-accent">HIBACHI</span></div>
     <p class="footer-sub">CULINARY ARTISTRY BY CHEF JORGE GALICIA</p>
-    
     <a href="tel:9097255030" class="contact-link">(909) 725-5030</a>
-    
-    <a href="https://instagram.com/personal.hibachi" class="social-link">
-      @personal.hibachi
-    </a>
-    
-    <div class="copyright">
-      <small>© 2026 Personal Hibachi. All Rights Reserved.</small>
-    </div>
+    <a href="https://instagram.com/personal.hibachi" class="social-link">@personal.hibachi</a>
+    <div class="copyright"><small>© 2026 Personal Hibachi. All Rights Reserved.</small></div>
   </footer>
 
   <script>
-    // MENU TOGGLE LOGIC
-    function toggleMenu() {
-      const overlay = document.getElementById('navOverlay');
-      overlay.classList.toggle('active');
-    }
-
-    // LANGUAGE TOGGLE
+    function toggleMenu() { document.getElementById('navOverlay').classList.toggle('active'); }
     function toggleLanguage() {
       const body = document.body;
-      
-      if (body.classList.contains('english-active')) {
-        body.classList.remove('english-active');
-        body.classList.add('spanish-active');
-      } else {
-        body.classList.remove('spanish-active');
-        body.classList.add('english-active');
-      }
+      if (body.classList.contains('english-active')) { body.classList.remove('english-active'); body.classList.add('spanish-active'); }
+      else { body.classList.remove('spanish-active'); body.classList.add('english-active'); }
     }
-
-    // INTERACTIVE VIDEO HOVER LOGIC
-    const videos = document.querySelectorAll('.interactive-video');
-
-    videos.forEach(video => {
-        video.pause(); // Ensure paused at start
-        
-        video.parentElement.addEventListener('mouseenter', () => {
-            video.play();
-        });
-
-        video.parentElement.addEventListener('mouseleave', () => {
-            video.pause();
-        });
+    document.querySelectorAll('.interactive-video').forEach(video => {
+        video.parentElement.addEventListener('mouseenter', () => video.play());
+        video.parentElement.addEventListener('mouseleave', () => video.pause());
     });
   </script>
 </body>
