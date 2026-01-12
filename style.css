@@ -16,11 +16,21 @@ html {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-white);
-  font-family: var(--font-body);
-  overflow-x: hidden;
-  line-height: 1.6;
+    /* Base color is deep red */
+    background-color: #1a0000;
+    
+    /* RADIAL GRADIENT: Glowing dark red center, fading to pitch black edges */
+    background-image: 
+        radial-gradient(circle at center, #3d0000 0%, #000000 90%);
+        
+    /* Keeps the glow centered behind the content */
+    background-attachment: fixed;
+    
+    color: var(--text-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
 /* --- TYPOGRAPHY & GLOWS --- */
@@ -585,4 +595,64 @@ body.spanish-active .lang-en { display: none !important; }
   font-weight: bold;
   color: white;
   margin-bottom: 5px;
+}
+
+/* --- UPDATED VIDEO CARD STYLES --- */
+
+/* 1. Make the card a block-level link so the whole thing is clickable */
+a.video-card {
+    display: block;
+    text-decoration: none; /* Removes underline from links */
+}
+
+/* 2. Style the Title inside the overlay */
+.vid-title {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    letter-spacing: 4px;
+    margin-bottom: 5px; /* Space between title and click text */
+}
+
+/* 3. The Transparent "Click Me" Indicator */
+.click-indicator {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6); /* Transparent White */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+/* 4. Hover Effects */
+/* When hovering the card, make the click text glow red and solid white */
+a.video-card:hover .click-indicator {
+    background-color: var(--hibachi-red);
+    color: white;
+    border-color: var(--hibachi-red);
+    opacity: 1;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Update the overlay positioning to accommodate the new text */
+.vid-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none; /* Allows click to pass through to the <a> tag */
+    z-index: 2;
+    transition: bottom 0.3s ease;
+}
+
+/* Lift the text up slightly on hover */
+a.video-card:hover .vid-overlay {
+    bottom: 30px; 
 }

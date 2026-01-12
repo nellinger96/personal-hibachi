@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Party | Personal Hibachi </title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+    
+    /* --- SUB-PAGE SPECIFIC STYLES --- */
+    /* This keeps the sub-pages clean without needing a huge CSS update */
+    
+    .sub-header {
+        padding: 40px 20px;
+        text-align: center;
+        background: black;
+        border-bottom: 1px solid #222;
+        position: relative;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        color: white;
+        text-decoration: none;
+        font-family: var(--font-body);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s;
+    }
+
+    .back-btn:hover { color: var(--hibachi-red); }
+
+    .gallery-section {
+        padding: 60px 20px;
+        background: #050505;
+        min-height: 80vh;
+    }
+
+    /* Reuse your existing video grid but allow for controls */
+    .gallery-card {
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .gallery-video {
+        width: 100%;
+        display: block;
+        /* No fixed height here so it fits the video aspect ratio */
+    }
+
+    .gallery-caption {
+        padding: 15px;
+        color: #888;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    /* Mobile fix for back button */
+    @media(max-width: 768px) {
+        .back-btn { position: static; margin-bottom: 20px; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body class="english-active">
+
+  <div class="sub-header">
+    <a href="index.html" class="back-btn">
+       ← BACK TO HOME
+    </a>
+    
+    <h1>
+        <span class="lang-en">THE <span class="red-accent">Party</span></span>
+        <span class="lang-es">LA<span class="red-accent">Fiesta</span></span>
+    </h1>
+    <p style="color: #666; margin-top: 10px;">
+        <span class="lang-en">Experience the fire and flavor.</span>
+        <span class="lang-es">Experimenta el fuego y el sabor.</span>
+    </p>
+  </div>
+
+  <section class="gallery-section">
+    <div class="video-grid"> <div class="gallery-card">
+            <video class="gallery-video" controls playsinline>
+                <source src="fire_trick_1.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">
+                The Volcano Onion / El Volcán de Cebolla
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline>
+                <source src="fire_trick_2.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">
+                High Flames / Llamas Altas
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline>
+                <source src="fire_trick_3.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">
+                Cooking the Steak / Cocinando el Bistec
+            </div>
+        </div>
+
+        </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-logo-text">PERSONAL <span class="red-accent">HIBACHI</span></div>
+    <a href="sms:+19097255030?body=Hi Chef Jorge, I saw your videos and want to book!" class="cta-btn" style="margin-top: 20px; font-size: 1rem; padding: 10px 30px;">
+    BOOK NOW
+</a>
+    <div class="copyright">
+      <small>© 2026 Personal Hibachi. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Language Toggle Logic (Simplified for sub-pages)
+    // We default to English. If you want a toggle here, copy the Nav Overlay from index.html
+    // For now, this just displays both or defaults to English styles if present.
+  </script>
+</body>
+</html>
