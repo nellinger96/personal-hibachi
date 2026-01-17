@@ -10,7 +10,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
     
     /* --- SUB-PAGE SPECIFIC STYLES --- */
-    /* This keeps the sub-pages clean without needing a huge CSS update */
     
     .sub-header {
         padding: 40px 20px;
@@ -42,18 +41,39 @@
         min-height: 80vh;
     }
 
-    /* Reuse your existing video grid but allow for controls */
+    /* GRID LAYOUT FIX */
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
     .gallery-card {
         background: #111;
         border: 1px solid #333;
         border-radius: 8px;
         overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-card:hover {
+        border-color: var(--hibachi-red);
+        transform: translateY(-5px);
     }
 
     .gallery-video {
         width: 100%;
         display: block;
-        /* No fixed height here so it fits the video aspect ratio */
+        aspect-ratio: 9/16; /* Helps vertical videos look uniform */
+        object-fit: cover;
+        background: #000;
+    }
+
+    /* Handling different aspect ratios if some are landscape */
+    .gallery-video.landscape {
+        aspect-ratio: 16/9; 
     }
 
     .gallery-caption {
@@ -61,6 +81,7 @@
         color: #888;
         font-size: 0.9rem;
         text-align: center;
+        font-family: var(--font-body);
     }
     
     /* Mobile fix for back button */
@@ -74,7 +95,7 @@
 
   <div class="sub-header">
     <a href="index.html" class="back-btn">
-       ← BACK TO HOME
+        ← BACK TO HOME
     </a>
     
     <h1>
@@ -88,41 +109,87 @@
   </div>
 
   <section class="gallery-section">
-    <div class="video-grid"> <div class="gallery-card">
-            <video class="gallery-video" controls playsinline>
-                <source src="fire_trick_1.mp4" type="video/mp4">
+    <div class="video-grid">
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="firevid.mp4" type="video/mp4">
             </video>
-            <div class="gallery-caption">
-                The Volcano Onion / El Volcán de Cebolla
-            </div>
+            <div class="gallery-caption">The Fire Show / El Espectáculo</div>
         </div>
 
         <div class="gallery-card">
-            <video class="gallery-video" controls playsinline>
-                <source src="fire_trick_2.mp4" type="video/mp4">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="foodtray.mp4" type="video/mp4">
             </video>
-            <div class="gallery-caption">
-                High Flames / Llamas Altas
-            </div>
+            <div class="gallery-caption">Fresh Ingredients / Ingredientes Frescos</div>
         </div>
 
         <div class="gallery-card">
-            <video class="gallery-video" controls playsinline>
-                <source src="fire_trick_3.mp4" type="video/mp4">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="food26.mp4" type="video/mp4">
             </video>
-            <div class="gallery-caption">
-                Cooking the Steak / Cocinando el Bistec
-            </div>
+            <div class="gallery-caption">Cooking Live / Cocinando en Vivo</div>
         </div>
 
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="food36.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Sizzling Steak / Bistec Caliente</div>
         </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="food37.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Hibachi Art / Arte Hibachi</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="partyvid.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Celebration / Celebración</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="food50.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Grill Master / Maestro de la Parrilla</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="food51.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Delicious / Delicioso</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="party3.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Good Times / Buenos Tiempos</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="party55.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Unforgettable / Inolvidable</div>
+        </div>
+
+    </div>
   </section>
 
   <footer id="contact">
     <div class="footer-logo-text">PERSONAL <span class="red-accent">HIBACHI</span></div>
-        <a href="sms:+19097255030?body=Hi Chef Jorge, I saw your videos and want to book!" class="cta-btn" style="margin-top: 20px; font-size: 1rem; padding: 10px 30px;">
-    BOOK NOW
-</a>
+    
+    <a href="sms:+19097255030?body=Hi Chef Jorge, I saw your videos and want to book!" class="cta-btn" style="margin-top: 20px; font-size: 1rem; padding: 10px 30px; display:inline-block;">
+        BOOK NOW
+    </a>
     
     <div class="copyright">
       <small>© 2026 Personal Hibachi. All Rights Reserved.</small>
@@ -130,9 +197,18 @@
   </footer>
 
   <script>
-    // Language Toggle Logic (Simplified for sub-pages)
-    // We default to English. If you want a toggle here, copy the Nav Overlay from index.html
-    // For now, this just displays both or defaults to English styles if present.
+    // Simple script to handle video playback (pause others when one plays)
+    const videos = document.querySelectorAll('video');
+    
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video) {
+                    otherVideo.pause();
+                }
+            });
+        });
+    });
   </script>
 </body>
 </html>

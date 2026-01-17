@@ -14,13 +14,13 @@
     body { background-color: #000; color: white; text-align: center; }
     
     .page-container {
-        max-width: 800px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .back-link {
@@ -35,29 +35,66 @@
     h1 {
         font-family: 'Oswald', sans-serif;
         font-size: 2.5rem;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         text-transform: uppercase;
         color: white;
     }
 
     .red { color: #ff3e3e; text-shadow: 0 0 15px rgba(255, 62, 62, 0.5); }
 
-    /* The Video Player */
-    .feature-video {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid #333;
-        box-shadow: 0 0 30px rgba(255, 62, 62, 0.2);
-        margin-bottom: 40px;
-        background: #111;
-    }
-
     .desc {
         color: #ccc;
         margin-bottom: 40px;
         font-family: 'Montserrat', sans-serif;
         line-height: 1.6;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    /* GRID LAYOUT */
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-card {
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .gallery-video {
+        width: 100%;
+        display: block;
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        background: #000;
+    }
+    
+    .gallery-caption {
+        padding: 15px;
+        color: #888;
+        font-size: 0.9rem;
+        font-family: var(--font-body);
+    }
+
+    .cta-btn {
+        display: inline-block;
+        background: #ff3e3e;
+        color: white;
+        padding: 15px 30px;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+    .cta-btn:hover { background: #d32f2f; }
   </style>
 </head>
 
@@ -70,21 +107,55 @@
     </div>
 
     <h1>THE <span class="red">PARTY</span></h1>
-
-    <video class="feature-video" controls autoplay playsinline>
-        <source src="party1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
+    
     <p class="desc">
       It’s not just dinner; it’s a celebration. We bring the music, the energy, and the sake shots (if requested!). Perfect for birthdays, bachelorette parties, and family gatherings.
     </p>
 
-    <a href="sms:+19097255030?body=Hi Chef Jorge, I watched the Party video and I want to book!" class="cta-btn">
-      BOOK THIS VIBE
-    </a>
+    <div class="video-grid">
+        
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="partycomplete.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Full Experience</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="partyco.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Good Vibes</div>
+        </div>
+
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata">
+                <source src="party55.mp4" type="video/mp4">
+            </video>
+            <div class="gallery-caption">Unforgettable</div>
+        </div>
+
+    </div>
+
+    <div>
+        <a href="sms:+19097255030?body=Hi Chef Jorge, I watched the Party video and I want to book!" class="cta-btn">
+        BOOK THIS VIBE
+        </a>
+    </div>
 
   </div>
+
+  <script>
+    // Pause other videos when one plays
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video) otherVideo.pause();
+            });
+        });
+    });
+  </script>
 
 </body>
 </html>

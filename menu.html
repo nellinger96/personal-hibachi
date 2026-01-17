@@ -8,10 +8,44 @@
   <link rel="icon" href="logo.png" type="image/png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+    
+    /* Language Toggle Helpers */
     body.english-active .lang-es { display: none !important; }
     body.spanish-active .lang-en { display: none !important; }
+    
+    /* Header Styles */
     .sub-header { padding: 40px 20px; text-align: center; background: #000; border-bottom: 1px solid #222; position: relative; }
     .back-btn { position: absolute; top: 40px; left: 20px; color: white; text-decoration: none; font-weight: bold; }
+    
+    /* Video Grid Styles (Matches Heat Page) */
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .gallery-card {
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .gallery-video {
+        width: 100%;
+        display: block;
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        background: #000;
+    }
+    .gallery-caption {
+        padding: 10px;
+        color: #888;
+        font-size: 0.9rem;
+        text-align: center;
+        font-family: var(--font-body);
+    }
+
     @media(max-width: 768px) { .back-btn { position: static; display: block; margin-bottom: 20px; } }
   </style>
 </head>
@@ -103,11 +137,36 @@
         <span class="lang-en">FOOD <span class="red-accent">GALLERY</span></span>
         <span class="lang-es">GALERÍA DE <span class="red-accent">COMIDA</span></span>
      </h2>
-     <div class="photo-grid">
-        <div class="photo-item"><img src="food1.jpg" alt="Hibachi"></div>
-        <div class="photo-item"><img src="food2.jpg" alt="Hibachi"></div>
-        <div class="photo-item"><img src="food3.jpg" alt="Hibachi"></div>
-        <div class="photo-item"><img src="food4.jpg" alt="Hibachi"></div>
+     
+     <div class="video-grid">
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="foodtray.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">Fresh Prep</div>
+        </div>
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="food26.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">On The Grill</div>
+        </div>
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="food37.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">Sizzling</div>
+        </div>
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="partyvid.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">The Vibe</div>
+        </div>
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="food50.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">Chef's Skills</div>
+        </div>
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="food51.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">Plating</div>
+        </div>
+        <div class="gallery-card">
+            <video class="gallery-video" controls playsinline preload="metadata"><source src="party3.mp4" type="video/mp4"></video>
+            <div class="gallery-caption">Experience</div>
+        </div>
      </div>
   </section>
 
@@ -117,5 +176,17 @@
         <span class="lang-en">BOOK NOW</span><span class="lang-es">RESERVAR AHORA</span>
     </a>
   </footer>
+
+  <script>
+    // Pause other videos when one plays
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video) otherVideo.pause();
+            });
+        });
+    });
+  </script>
 </body>
 </html>
