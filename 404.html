@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Not Found | Personal Hibachi</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0907">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="nf">
+  <video src="/assets/video/big-flame.mp4" poster="/assets/img/big-flame.jpg" muted loop playsinline autoplay aria-hidden="true"></video>
+  <div class="nf__inner">
+    <p class="nf__code">404</p>
+    <h1><span class="en">This page went up in flames.</span><span class="es">Esta página se quemó.</span></h1>
+    <p><span class="en">The page you're looking for isn't here, but dinner still can be.</span><span class="es">La página que buscas no está aquí, pero la cena sí puede estar.</span></p>
+    <div class="finale__btns">
+      <a class="btn" href="/"><span class="en">Back to home</span><span class="es">Volver al inicio</span></a>
+      <a class="btn btn--ghost" href="/#menu"><span class="en">See the menu</span><span class="es">Ver el menú</span></a>
+    </div>
+  </div>
+</main>
+<script>
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem('ph-lang'); } catch (e) {}
+    if (!l && (navigator.language || '').toLowerCase().indexOf('es') === 0) l = 'es';
+    if (l === 'es') { document.documentElement.dataset.lang = 'es'; document.documentElement.lang = 'es'; }
+    document.documentElement.classList.remove('no-js');
+  })();
+</script>
+</body>
+</html>

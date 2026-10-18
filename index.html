@@ -1,198 +1,550 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Personal Hibachi Chef San Bernardino | At-Home Teppanyaki Catering</title>
-  <meta name="description" content="Book the ultimate backyard hibachi experience in San Bernardino, Riverside, and the Inland Empire. Chef Jorge brings the grill, food, and show to you.">
-  <meta name="keywords" content="Hibachi Chef San Bernardino, Private Teppanyaki Riverside, Backyard Hibachi Party, Personal Chef Inland Empire, Hibachi Catering Fontana">
-  
-  <meta property="og:title" content="Personal Hibachi | At-Home Dining Experience">
-  <meta property="og:description" content="We bring the restaurant to you. 5-Star Hibachi catering in San Bernardino & Riverside.">
-  <meta property="og:image" content="https://personal-hibachi.vercel.app/logo.png">
-  <meta property="og:url" content="https://personal-hibachi.vercel.app/">
-  
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.png" type="image/png">
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-    body.english-active .lang-es { display: none !important; }
-    body.spanish-active .lang-en { display: none !important; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Personal Hibachi | At-Home Hibachi Chef in the Inland Empire</title>
+<meta name="description" content="Chef Jorge Galicia brings the teppanyaki show to your backyard. 30 years on the grill. Private hibachi parties across San Bernardino and Riverside counties.">
+<meta name="theme-color" content="#0b0907">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://bookhibachi.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal Hibachi | Chef Jorge brings the show to you">
+<meta property="og:description" content="Private at-home hibachi parties across the Inland Empire. Fire show, fried rice, filet mignon and lobster, cooked live in your backyard.">
+<meta property="og:image" content="https://bookhibachi.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://bookhibachi.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&text=%E9%89%84%E6%9D%BF%E7%84%BC%E7%82%8E&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodService",
+  "name": "Personal Hibachi",
+  "image": "https://bookhibachi.com/assets/img/action.jpg",
+  "logo": "https://bookhibachi.com/assets/img/logo.png",
+  "description": "Private at-home hibachi chef catering serving San Bernardino and Riverside counties.",
+  "telephone": "+19097255030",
+  "priceRange": "$$",
+  "servesCuisine": ["Teppanyaki", "Hibachi", "Japanese"],
+  "founder": { "@type": "Person", "name": "Jorge Galicia" },
+  "areaServed": ["San Bernardino", "Riverside", "Fontana", "Rancho Cucamonga", "Redlands", "Ontario", "Rialto", "Moreno Valley", "Corona", "Victorville"],
+  "sameAs": ["https://instagram.com/personal.hibachi"],
+  "url": "https://bookhibachi.com/"
+}
+</script>
 </head>
+<body>
 
-<body class="english-active">
+<!-- ============ LOADER ============ -->
+<div class="loader" aria-hidden="true">
+  <img class="loader__logo" src="assets/img/logo.png" alt="" width="96" height="96">
+  <div class="loader__temp"><span id="temp">0</span><sup>°F</sup></div>
+  <p class="loader__label"><span class="en">Heating the grill</span><span class="es">Calentando la plancha</span></p>
+</div>
 
-  <div class="menu-toggle-btn" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a href="#top" class="nav__brand" aria-label="Personal Hibachi home">
+    <img src="assets/img/logo.png" alt="" width="34" height="34">
+    <span>Personal Hibachi</span>
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#show"><span class="en">The Show</span><span class="es">El Show</span></a>
+    <a href="#menu"><span class="en">Menu</span><span class="es">Menú</span></a>
+    <a href="gallery.html"><span class="en">Gallery</span><span class="es">Galería</span></a>
+    <a href="#quote"><span class="en">Quote</span><span class="es">Cotizar</span></a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav__right">
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language / Cambiar idioma">
+      <span data-l="en">EN</span><i>/</i><span data-l="es">ES</span>
+    </button>
+    <a class="btn btn--sm" href="#quote"><span class="en">Book</span><span class="es">Reservar</span></a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__stage">
+    <div class="hero__panel hero__panel--l"><video src="assets/video/chandelier-fire.mp4" poster="assets/img/chandelier-fire.jpg" muted loop playsinline autoplay preload="auto"></video></div>
+    <div class="hero__panel hero__panel--c"><video src="assets/video/fire2.mp4" poster="assets/img/fire2.jpg" muted loop playsinline autoplay preload="auto"></video></div>
+    <div class="hero__panel hero__panel--r"><video src="assets/video/party55.mp4" poster="assets/img/party55.jpg" muted loop playsinline autoplay preload="auto"></video></div>
+    <div class="hero__shade"></div>
+  </div>
+  <canvas class="embers" aria-hidden="true"></canvas>
+
+  <div class="hero__copy">
+    <p class="eyebrow hero__eyebrow">
+      <span class="en">Private teppanyaki · Inland Empire</span>
+      <span class="es">Teppanyaki privado · Inland Empire</span>
+    </p>
+    <h1 class="hero__title" aria-label="Personal Hibachi">
+      <span class="line"><span class="li">Personal</span></span>
+      <span class="line"><span class="li">Hibachi</span></span>
+    </h1>
+    <p class="hero__sub">
+      <span class="en">Chef Jorge brings the grill, the fire and the show to your backyard.</span>
+      <span class="es">El Chef Jorge lleva la parrilla, el fuego y el show a tu casa.</span>
+    </p>
+    <div class="hero__ctas">
+      <a class="btn" href="#quote"><span class="en">Book your date</span><span class="es">Reserva tu fecha</span></a>
+      <a class="btn btn--ghost" href="#menu"><span class="en">See the menu</span><span class="es">Ver el menú</span></a>
+    </div>
   </div>
 
-  <div class="nav-overlay" id="navOverlay">
-    <div class="nav-close-btn" onclick="toggleMenu()">×</div>
-    <div class="overlay-content">
-      <a href="index.html" onclick="toggleMenu()">HOME</a>
-      <a href="menu.html" onclick="toggleMenu()">THE MENU</a>
-      <a href="info.html" onclick="toggleMenu()">SETUP, POLICIES & FAQ</a>
-      <a href="index.html#reviews" onclick="toggleMenu()">REVIEWS</a>
-      <a href="#contact" onclick="toggleMenu()">CONTACT</a>
-      <button class="overlay-lang-btn" onclick="toggleLanguage(); toggleMenu()">SWITCH LANGUAGE / IDIOMA</button>
+  <p class="hero__statement" aria-hidden="true">
+    <span class="en"><span class="line"><span class="li">Not just dinner.</span></span><span class="line"><span class="li red">It's a show.</span></span></span>
+    <span class="es"><span class="line"><span class="li">No es solo una cena.</span></span><span class="line"><span class="li red">Es un show.</span></span></span>
+  </p>
+
+  <div class="hero__jp" aria-hidden="true">鉄板焼</div>
+  <div class="hero__scroll" aria-hidden="true"><span class="en">Scroll</span><span class="es">Desliza</span><i></i></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" data-dir="1" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Fire show</span><b>✕</b><span>Fried rice</span><b>✕</b><span>Filet mignon</span><b>✕</b><span>Lobster</span><b>✕</b><span>Onion volcano</span><b>✕</b><span>Sake shots</span><b>✕</b><span>Birthdays</span><b>✕</b><span>Bachelorettes</span><b>✕</b>
+  </div>
+</div>
+
+<!-- ============ CHEF ============ -->
+<section class="chef" id="chef">
+  <div class="wrap chef__grid">
+    <div class="chef__text">
+      <p class="eyebrow"><span class="en">Meet Chef Jorge</span><span class="es">Conoce al Chef Jorge</span></p>
+      <h2 class="chef__years">
+        <span class="chef__num"><span class="count" data-to="30">30</span></span>
+        <span class="chef__label"><span class="en">years behind<br>the grill</span><span class="es">años detrás<br>de la parrilla</span></span>
+      </h2>
+      <p class="chef__bio reveal-words">
+        <span class="en">Chef Jorge Galicia learned teppanyaki at a major Japanese steakhouse franchise, where every flip is precise and every table is an audience. Three decades later, he skips the restaurant and brings the whole thing to you.</span>
+        <span class="es">El Chef Jorge Galicia aprendió teppanyaki en una reconocida franquicia japonesa, donde cada movimiento es preciso y cada mesa es un público. Tres décadas después, se salta el restaurante y te lo lleva todo a ti.</span>
+      </p>
+      <p class="chef__bio2">
+        <span class="en">You get five-star food and a show your guests will talk about, and you don't wash a single dish.</span>
+        <span class="es">Comida de cinco estrellas, un show del que tus invitados van a hablar, y ni un solo plato que lavar.</span>
+      </p>
+      <p class="chef__sig">Jorge Galicia</p>
+    </div>
+
+    <figure class="chef__media" data-cursor="">
+      <div class="chef__mask"><img src="assets/img/action.jpg" alt="Chef Jorge seasoning fried rice on the grill under string lights" loading="lazy" width="1300" height="1950"></div>
+      <span class="chef__jp" aria-hidden="true">炎</span>
+    </figure>
+
+    <figure class="chef__family">
+      <img src="assets/img/family.jpg" alt="Chef Jorge with his family crew at an event" loading="lazy" width="780" height="1066">
+      <figcaption><span class="en">A family business</span><span class="es">Un negocio familiar</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ THE SHOW (horizontal) ============ -->
+<section class="show" id="show">
+  <div class="show__track">
+    <div class="show__intro">
+      <p class="eyebrow"><span class="en">The show</span><span class="es">El show</span></p>
+      <h2 class="h2">
+        <span class="en">Fire, flips<br>&amp; a full<br><em>table.</em></span>
+        <span class="es">Fuego, trucos<br>y la mesa<br><em>llena.</em></span>
+      </h2>
+      <p class="show__hint"><span class="en">Keep scrolling</span><span class="es">Sigue bajando</span> <i>→</i></p>
+    </div>
+
+    <article class="clip" data-clip="original" data-cursor="Play" tabindex="0" role="button" aria-label="The Onion Volcano">
+      <div class="clip__vid"><video data-src="assets/video/original.mp4" poster="assets/img/original.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">01</span><h3><span class="en">The Onion Volcano</span><span class="es">El Volcán de Cebolla</span></h3></div>
+    </article>
+    <article class="clip" data-clip="chandelier-fire" data-cursor="Play" tabindex="0" role="button" aria-label="Chandelier Nights">
+      <div class="clip__vid"><video data-src="assets/video/chandelier-fire.mp4" poster="assets/img/chandelier-fire.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">02</span><h3><span class="en">Chandelier Nights</span><span class="es">Noches de Candelabro</span></h3></div>
+    </article>
+    <article class="clip" data-clip="two-chefs" data-cursor="Play" tabindex="0" role="button" aria-label="Two Chefs, One Show">
+      <div class="clip__vid"><video data-src="assets/video/two-chefs.mp4" poster="assets/img/two-chefs.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">03</span><h3><span class="en">Two Chefs, One Show</span><span class="es">Dos Chefs, Un Show</span></h3></div>
+    </article>
+    <article class="clip" data-clip="dance" data-cursor="Play" tabindex="0" role="button" aria-label="The Chef Has Moves">
+      <div class="clip__vid"><video data-src="assets/video/dance.mp4" poster="assets/img/dance.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">04</span><h3><span class="en">The Chef Has Moves</span><span class="es">El Chef Sabe Bailar</span></h3></div>
+    </article>
+    <article class="clip" data-clip="night-crowd" data-cursor="Play" tabindex="0" role="button" aria-label="Under the String Lights">
+      <div class="clip__vid"><video data-src="assets/video/night-crowd.mp4" poster="assets/img/night-crowd.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">05</span><h3><span class="en">Under the String Lights</span><span class="es">Bajo las Luces</span></h3></div>
+    </article>
+    <article class="clip" data-clip="garden-party" data-cursor="Play" tabindex="0" role="button" aria-label="Garden Parties">
+      <div class="clip__vid"><video data-src="assets/video/garden-party.mp4" poster="assets/img/garden-party.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">06</span><h3><span class="en">Garden Parties</span><span class="es">Fiestas en el Jardín</span></h3></div>
+    </article>
+    <article class="clip" data-clip="fire1" data-cursor="Play" tabindex="0" role="button" aria-label="High Flames">
+      <div class="clip__vid"><video data-src="assets/video/fire1.mp4" poster="assets/img/fire1.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">07</span><h3><span class="en">High Flames</span><span class="es">Llamas Altas</span></h3></div>
+    </article>
+    <article class="clip" data-clip="food26" data-cursor="Play" tabindex="0" role="button" aria-label="Fried Rice, Live">
+      <div class="clip__vid"><video data-src="assets/video/food26.mp4" poster="assets/img/food26.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">08</span><h3><span class="en">Fried Rice, Live</span><span class="es">Arroz Frito en Vivo</span></h3></div>
+    </article>
+    <article class="clip" data-clip="crowd-catch" data-cursor="Play" tabindex="0" role="button" aria-label="Front-Row Seats">
+      <div class="clip__vid"><video data-src="assets/video/crowd-catch.mp4" poster="assets/img/crowd-catch.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">09</span><h3><span class="en">Front-Row Seats</span><span class="es">Primera Fila</span></h3></div>
+    </article>
+    <article class="clip" data-clip="big-tent" data-cursor="Play" tabindex="0" role="button" aria-label="Big Tent Nights">
+      <div class="clip__vid"><video data-src="assets/video/big-tent.mp4" poster="assets/img/big-tent.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip__meta"><span class="clip__n">10</span><h3><span class="en">Big Tent Nights</span><span class="es">Noches de Carpa</span></h3></div>
+    </article>
+    <div class="show__end">
+      <p class="eyebrow">@personal.hibachi</p>
+      <a class="show__ig" href="gallery.html">
+        <span class="en">See every video</span><span class="es">Ver todos los videos</span> <i>→</i>
+      </a>
     </div>
   </div>
+  <div class="show__progress" aria-hidden="true"><span></span></div>
+</section>
 
-  <section class="hero" id="home">
-    <div class="hero-video-container">
-      <video autoplay loop muted playsinline class="hero-video">
-        <source src="original.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="hero-overlay" style="background: radial-gradient(circle, transparent 20%, #1a0000 90%);"></div>
-    
-    <div class="hero-content-centered">
-      <img src="logo.png" alt="Personal Hibachi Logo" class="hero-logo">
-      <div class="logo-text">PERSONAL HIBACHI</div>
-      <p class="lang-en tagline">THE ULTIMATE AT-HOME DINING EXPERIENCE</p>
-      <p class="lang-es tagline">LA MEJOR EXPERIENCIA CULINARIA EN CASA</p>
-      
-      <a href="sms:+19097255030?body=Hi Chef Jorge, I am interested in booking a hibachi party!" class="cta-btn">
-        <span class="lang-en">BOOK YOUR DATE</span>
-        <span class="lang-es">RESERVA TU FECHA</span>
-      </a>
-    </div>
-  </section>
-
-  <section id="about" class="about-section">
-    <div class="about-container">
-      
-      <div class="about-image">
-         <div class="about-photo-grid">
-            <img src="chef.png" alt="Chef Jorge Professional" class="about-main-photo">
-            
-            <img src="family.png" alt="Chef Jorge and Family" class="about-sub-photo">
-            
-            <img src="action.png" alt="Hibachi Action" class="about-sub-photo">
-         </div>
+<!-- ============ SETUP (scroll-scrubbed sequence) ============ -->
+<section class="setup" id="setup">
+  <div class="setup__inner">
+    <div class="setup__steps">
+      <p class="eyebrow"><span class="en">We bring the restaurant</span><span class="es">Llevamos el restaurante</span></p>
+      <div class="step is-active">
+        <span class="step__n">01</span>
+        <h3><span class="en">You pick the spot.</span><span class="es">Tú eliges el lugar.</span></h3>
+        <p><span class="en">Backyard, driveway or patio. For safety and smoke, we cook outdoors only.</span><span class="es">Patio, entrada o terraza. Por seguridad y humo, cocinamos solo al aire libre.</span></p>
       </div>
-      
-      <div class="about-text">
-         <h2>
-            <span class="lang-en">MEET CHEF <span class="red-accent">JORGE</span></span>
-            <span class="lang-es">CONOCE AL CHEF <span class="red-accent">JORGE</span></span>
-         </h2>
-         <p>
-            <span class="lang-en">With an impressive 30-year career behind the grill, Chef Jorge is a true master of the Teppanyaki art form. His journey began at a renowned major Japanese franchise, where he developed a deep passion for culinary precision and the art of entertainment.</span>
-            <span class="lang-es">Con una impresionante carrera de 30 años detrás de la parrilla, el Chef Jorge es un verdadero maestro del arte Teppanyaki. Su viaje comenzó en una reconocida franquicia japonesa, donde desarrolló una profunda pasión por la precisión culinaria y el arte del entretenimiento.</span>
-         </p>
-         <p>
-            <span class="lang-en">Today, his mission is to bring those decades of expertise directly to your table. Personal Hibachi is not just dinner—it is the culmination of a lifetime of passion, delivering 5-star service and an unforgettable show to every single guest.</span>
-            <span class="lang-es">Hoy, su misión es llevar esas décadas de experiencia directamente a tu mesa. Personal Hibachi no es solo una cena, es la culminación de toda una vida de pasión, brindando un servicio de 5 estrellas y un espectáculo inolvidable a cada invitado.</span>
-         </p>
-         <br>
-         <a href="menu.html" class="cta-btn" style="padding: 10px 30px; font-size: 1rem;">
-            <span class="lang-en">VIEW MENU</span><span class="lang-es">VER MENÚ</span>
-         </a>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3><span class="en">We set the table.</span><span class="es">Montamos la mesa.</span></h3>
+        <p><span class="en">Tables, chairs, linens, plates, glass cups and silverware, sized to your exact guest count.</span><span class="es">Mesas, sillas, mantelería, platos, vasos y cubiertos, para el número exacto de invitados.</span></p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3><span class="en">Then we light the grill.</span><span class="es">Y encendemos la plancha.</span></h3>
+        <p><span class="en">We arrive 30–60 minutes early so the show starts on time.</span><span class="es">Llegamos 30–60 minutos antes para que el show empiece a tiempo.</span></p>
+      </div>
+      <div class="setup__price">
+        <b>$250</b>
+        <span><span class="en">full setup<br>covers 15 guests</span><span class="es">montaje completo<br>para 15 invitados</span></span>
       </div>
     </div>
-  </section>
-
-  <section class="video-grid-section">
-    <h2 class="section-title">
-      <span class="lang-en">THE <span class="red-accent">EXPERIENCE</span></span><span class="lang-es">LA <span class="red-accent">EXPERIENCIA</span></span>
-    </h2>
-    <div class="video-grid">
-      <a href="heat.html" class="video-card">
-        <video class="interactive-video" loop muted playsinline preload="metadata">
-            <source src="fire1.mp4" type="video/mp4">
-        </video>
-        <div class="vid-overlay"><div class="vid-title"><span class="lang-en">THE HEAT</span><span class="lang-es">EL CALOR</span></div><div class="click-indicator">CLICK TO VIEW</div></div>
-      </a>
-      
-      <a href="skill.html" class="video-card">
-        <video class="interactive-video" loop muted playsinline preload="metadata">
-            <source src="fire2.mp4" type="video/mp4">
-        </video>
-        <div class="vid-overlay"><div class="vid-title"><span class="lang-en">THE SKILL</span><span class="lang-es">LA HABILIDAD</span></div><div class="click-indicator">CLICK TO VIEW</div></div>
-      </a>
-      
-      <a href="party.html" class="video-card">
-        <video class="interactive-video" loop muted playsinline preload="metadata">
-            <source src="party1.mp4" type="video/mp4">
-        </video>
-        <div class="vid-overlay"><div class="vid-title"><span class="lang-en">THE PARTY</span><span class="lang-es">LA FIESTA</span></div><div class="click-indicator">CLICK TO VIEW</div></div>
-      </a>
+    <div class="setup__frame">
+      <canvas class="setup__canvas" aria-label="Time-lapse of an empty tent turning into a hibachi party"></canvas>
+      <div class="setup__bar"><span></span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="testimonials-section" id="reviews">
-    <h2 class="section-title">
-      <span class="lang-en">CLIENT <span class="red-accent">LOVE</span></span><span class="lang-es">CLIENTES <span class="red-accent">FELICES</span></span>
-    </h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="quote-icon">“</div>
-        <p class="review-text">
-          <span class="lang-en">Better than Benihana! The food was hot, the show was hilarious.</span><span class="lang-es">¡Mejor que Benihana! La comida estaba caliente, el show divertidísimo.</span>
-        </p>
-        <div class="review-author">- Jonathan D. <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-link">✔ Verified</a></div>
-        <div class="stars">★★★★★</div>
+<!-- ============ MENU ============ -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow"><span class="en">The menu</span><span class="es">El menú</span></p>
+      <h2 class="h2"><span class="en">Pick your plate.</span><span class="es">Elige tu plato.</span></h2>
+      <p class="sec-head__sub"><span class="en">Every package comes with fried rice and hibachi vegetables, cooked right in front of your guests.</span><span class="es">Todos los paquetes incluyen arroz frito y vegetales hibachi, cocinados frente a tus invitados.</span></p>
+    </header>
+
+    <div class="pkgs">
+      <article class="pkg" data-cursor="Hungry?">
+        <div class="pkg__media"><video data-src="assets/video/plate.mp4" poster="assets/img/plate.jpg" muted loop playsinline preload="none"></video></div>
+        <div class="pkg__body">
+          <p class="pkg__n">01</p>
+          <h3><span class="en">Chef's Special</span><span class="es">Especial del Chef</span></h3>
+          <p class="pkg__price">$60<small><span class="en">/person</span><span class="es">/persona</span></small></p>
+          <ul>
+            <li><span class="en">Fried rice</span><span class="es">Arroz frito</span></li>
+            <li><span class="en">Hibachi vegetables</span><span class="es">Vegetales hibachi</span></li>
+            <li><span class="en">New York steak</span><span class="es">Bistec New York</span></li>
+            <li><span class="en">Chicken</span><span class="es">Pollo</span></li>
+            <li><span class="en">Shrimp</span><span class="es">Camarones</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="pkg pkg--hot" data-cursor="Hungry?">
+        <span class="pkg__badge"><span class="en">The signature</span><span class="es">El clásico</span></span>
+        <div class="pkg__media"><video data-src="assets/video/lobster.mp4" poster="assets/img/lobster.jpg" muted loop playsinline preload="none"></video></div>
+        <div class="pkg__body">
+          <p class="pkg__n">02</p>
+          <h3><span class="en">The Famous</span><span class="es">El Famoso</span></h3>
+          <p class="pkg__price">$80<small><span class="en">/person</span><span class="es">/persona</span></small></p>
+          <ul>
+            <li><span class="en">Soup &amp; salad</span><span class="es">Sopa y ensalada</span></li>
+            <li><span class="en">Fried rice</span><span class="es">Arroz frito</span></li>
+            <li><span class="en">Hibachi vegetables</span><span class="es">Vegetales hibachi</span></li>
+            <li><span class="en">Filet mignon</span><span class="es">Filete mignon</span></li>
+            <li><span class="en">Lobster</span><span class="es">Langosta</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="pkg" data-cursor="Hungry?">
+        <div class="pkg__media"><video data-src="assets/video/food50.mp4" poster="assets/img/food50.jpg" muted loop playsinline preload="none"></video></div>
+        <div class="pkg__body">
+          <p class="pkg__n">03</p>
+          <h3><span class="en">Seafood Lover</span><span class="es">Amante del Mar</span></h3>
+          <p class="pkg__price">$65–100<small><span class="en">/person</span><span class="es">/persona</span></small></p>
+          <ul>
+            <li><span class="en">Fried rice</span><span class="es">Arroz frito</span></li>
+            <li><span class="en">Hibachi vegetables</span><span class="es">Vegetales hibachi</span></li>
+            <li class="pkg__choose"><span class="en">Choose two:</span><span class="es">Elige dos:</span></li>
+            <li><span class="en">Lobster · Scallops · Salmon · Calamari</span><span class="es">Langosta · Vieiras · Salmón · Calamares</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="extras">
+      <div class="extra">
+        <h4><span class="en">Appetizers</span><span class="es">Aperitivos</span></h4>
+        <p><span class="en">Spicy edamame · Gyoza · Shrimp (shell on)</span><span class="es">Edamame picante · Gyoza · Camarones (con cáscara)</span></p>
       </div>
-      <div class="review-card">
-        <div class="quote-icon">“</div>
-        <p class="review-text">
-          <span class="lang-en">The filet mignon melted in my mouth. 10/10 experience.</span><span class="lang-es">El filete miñón se deshacía en la boca. Experiencia 10/10.</span>
-        </p>
-        <div class="review-author">- Maria G. <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="verified-link">✔ Verified</a></div>
-        <div class="stars">★★★★★</div>
+      <div class="extra extra--media">
+        <video data-src="assets/video/sauce.mp4" poster="assets/img/sauce.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <h4><span class="en">Sauces included</span><span class="es">Salsas incluidas</span></h4>
+        <p><span class="en">Soy · Spicy garlic butter · Sriracha</span><span class="es">Soya · Mantequilla de ajo picante · Sriracha</span></p>
+      </div>
+      <div class="extra">
+        <h4><span class="en">Premium sauces</span><span class="es">Salsas premium</span> <small>+$</small></h4>
+        <p><span class="en">Mustard · Spicy mayo · Ginger · Seafood</span><span class="es">Mostaza · Mayo picante · Jengibre · Mariscos</span></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer id="contact">
-    <img src="logo.png" alt="Personal Hibachi Logo" class="footer-logo-img" style="width: 100px; margin-bottom: 10px;">
-    <div class="footer-logo-text">PERSONAL <span class="red-accent">HIBACHI</span></div>
-    <p class="footer-sub">CULINARY ARTISTRY BY CHEF JORGE GALICIA</p>
-    
-    <a href="tel:9097255030" class="contact-link">(909) 725-5030</a>
-    <a href="https://instagram.com/personal.hibachi" class="social-link">@personal.hibachi</a>
+<!-- ============ QUOTE ============ -->
+<section class="quote" id="quote">
+  <div class="wrap quote__grid">
+    <form class="quote__form" id="quoteForm" onsubmit="return false">
+      <p class="eyebrow"><span class="en">Instant estimate</span><span class="es">Cotización al instante</span></p>
+      <h2 class="h2"><span class="en">Build your night.</span><span class="es">Arma tu noche.</span></h2>
 
-    <div class="service-areas" style="margin-top: 30px; font-size: 0.75rem; color: #444; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <span style="color: #666; font-weight: bold;">Proudly Serving the Inland Empire:</span><br>
-      San Bernardino • Riverside • Fontana • Rancho Cucamonga • Redlands • Ontario • Rialto • Moreno Valley • Corona • Victorville
+      <div class="field">
+        <label for="guests"><span class="en">Guests</span><span class="es">Invitados</span></label>
+        <div class="stepper">
+          <button type="button" data-step="-1" aria-label="Fewer guests">−</button>
+          <output id="guestsOut" for="guests">20</output>
+          <button type="button" data-step="1" aria-label="More guests">+</button>
+        </div>
+        <input type="range" id="guests" min="5" max="80" value="20">
+      </div>
+
+      <fieldset class="field">
+        <legend><span class="en">Package</span><span class="es">Paquete</span></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="pkg" value="special"><span><b><span class="en">Chef's Special</span><span class="es">Especial del Chef</span></b><em>$60</em></span></label>
+          <label class="choice"><input type="radio" name="pkg" value="famous" checked><span><b><span class="en">The Famous</span><span class="es">El Famoso</span></b><em>$80</em></span></label>
+          <label class="choice"><input type="radio" name="pkg" value="seafood"><span><b><span class="en">Seafood Lover</span><span class="es">Amante del Mar</span></b><em>$65–100</em></span></label>
+        </div>
+      </fieldset>
+
+      <label class="toggle">
+        <input type="checkbox" id="setupFee" checked>
+        <span class="toggle__ui"></span>
+        <span><span class="en">Full setup: tables, linens, plates (+$250)</span><span class="es">Montaje completo: mesas, mantelería, platos (+$250)</span></span>
+      </label>
+
+      <div class="field field--row">
+        <div>
+          <label for="date"><span class="en">Date</span><span class="es">Fecha</span></label>
+          <input type="date" id="date">
+        </div>
+        <div>
+          <label for="city"><span class="en">City</span><span class="es">Ciudad</span></label>
+          <select id="city">
+            <option>San Bernardino</option><option>Riverside</option><option>Fontana</option><option>Rancho Cucamonga</option><option>Redlands</option><option>Ontario</option><option>Rialto</option><option>Moreno Valley</option><option>Corona</option><option>Victorville</option><option value="other">Other / Otra</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <aside class="ticket" aria-live="polite">
+      <div class="ticket__head">
+        <img src="assets/img/logo.png" alt="" width="40" height="40">
+        <div><b>PERSONAL HIBACHI</b><span id="tDate">ORDER #001</span></div>
+      </div>
+      <div class="ticket__lines" id="tLines"></div>
+      <div class="ticket__total">
+        <span><span class="en">Estimated total</span><span class="es">Total estimado</span></span>
+        <b id="tTotal">$0</b>
+      </div>
+      <ul class="ticket__notes" id="tNotes"></ul>
+      <a class="btn btn--block" id="smsBtn" href="sms:+19097255030">
+        <span class="en">Text Chef Jorge this quote</span><span class="es">Enviar cotización al Chef</span>
+      </a>
+      <a class="ticket__call" href="tel:+19097255030"><span class="en">or call</span><span class="es">o llama al</span> (909) 725-5030</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ LOVE ============ -->
+<section class="love">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b><span class="count" data-to="30">30</span></b><span><span class="en">years on the grill</span><span class="es">años en la parrilla</span></span></div>
+      <div class="stat"><b><span class="count" data-to="5">5</span>K+</b><span><span class="en">followers on Instagram</span><span class="es">seguidores en Instagram</span></span></div>
+      <div class="stat"><b><span class="count" data-to="10">10</span>+</b><span><span class="en">cities served</span><span class="es">ciudades</span></span></div>
+      <div class="stat"><b>0</b><span><span class="en">dishes for you to wash</span><span class="es">platos que lavar</span></span></div>
     </div>
-    
-    <div class="copyright"><small>© 2026 Personal Hibachi. All Rights Reserved.</small></div>
-  </footer>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FoodService",
-    "name": "Personal Hibachi",
-    "image": "https://personal-hibachi.vercel.app/logo.png",
-    "description": "Private at-home hibachi chef catering serving San Bernardino and Riverside county.",
-    "telephone": "+19097255030",
-    "priceRange": "$$",
-    "areaServed": ["San Bernardino", "Riverside", "Fontana", "Rancho Cucamonga", "Redlands"],
-    "servesCuisine": "Teppanyaki",
-    "url": "https://personal-hibachi.vercel.app/"
-  }
-  </script>
+    <div class="reviews">
+      <blockquote class="review">
+        <div class="review__stars" aria-label="5 stars">★★★★★</div>
+        <p><span class="en">“Better than Benihana! The food was hot, the show was hilarious.”</span><span class="es">“¡Mejor que Benihana! La comida estaba caliente, el show divertidísimo.”</span></p>
+        <cite>Jonathan D.</cite>
+      </blockquote>
+      <blockquote class="review">
+        <div class="review__stars" aria-label="5 stars">★★★★★</div>
+        <p><span class="en">“The filet mignon melted in my mouth. 10/10 experience.”</span><span class="es">“El filete mignon se deshacía en la boca. Experiencia 10/10.”</span></p>
+        <cite>Maria G.</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
 
-  <script>
-    function toggleMenu() { document.getElementById('navOverlay').classList.toggle('active'); }
-    function toggleLanguage() {
-      const body = document.body;
-      if (body.classList.contains('english-active')) { body.classList.remove('english-active'); body.classList.add('spanish-active'); }
-      else { body.classList.remove('spanish-active'); body.classList.add('english-active'); }
-    }
-    // Hover play logic for videos
-    document.querySelectorAll('.interactive-video').forEach(video => {
-        video.parentElement.addEventListener('mouseenter', () => video.play());
-        video.parentElement.addEventListener('mouseleave', () => video.pause());
-    });
-  </script>
+<!-- ============ LATEST ============ -->
+<section class="latest" id="latest">
+  <div class="wrap latest__head">
+    <div>
+      <p class="eyebrow"><span class="en">Fresh off the grill</span><span class="es">Recién salido de la plancha</span></p>
+      <h2 class="h2"><span class="en">Latest from<br>the grill.</span><span class="es">Lo más<br>reciente.</span></h2>
+    </div>
+    <div class="latest__links">
+      <a class="btn btn--ghost" href="gallery.html"><span class="en">All videos</span><span class="es">Todos los videos</span></a>
+      <a class="latest__ig" href="https://instagram.com/personal.hibachi" target="_blank" rel="noopener">@personal.hibachi ↗</a>
+    </div>
+  </div>
+  <div class="latest__row" id="latestRow" aria-label="Latest videos"></div>
+  <p class="wrap latest__hint"><span class="en">Tap any video to watch it with sound.</span><span class="es">Toca cualquier video para verlo con sonido.</span></p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap faq__grid">
+    <div>
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2"><span class="en">Good questions.</span><span class="es">Buenas preguntas.</span></h2>
+      <div class="pay">
+        <p class="pay__label"><span class="en">We accept</span><span class="es">Aceptamos</span></p>
+        <ul><li>Zelle</li><li>Venmo</li><li>Cash</li><li>Apple Pay</li><li><span class="en">Card*</span><span class="es">Tarjeta*</span></li></ul>
+        <p class="pay__note"><span class="en">*Taxes and card fees apply.</span><span class="es">*Aplican impuestos y cargos por tarjeta.</span></p>
+      </div>
+    </div>
+
+    <div class="faq__list">
+      <details>
+        <summary><span class="en">How long is the service?</span><span class="es">¿Cuánto dura el servicio?</span></summary>
+        <p><span class="en">It depends on your guest count. Up to 30 guests is 1–2 hours. More than 30 guests is 2–3 hours.</span><span class="es">Depende del número de invitados. Hasta 30 invitados: 1–2 horas. Más de 30: 2–3 horas.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">Is there a guest limit?</span><span class="es">¿Hay límite de invitados?</span></summary>
+        <p><span class="en">No limit. Parties over 30 are served buffet style, and an additional chef can be added for an extra cost.</span><span class="es">Sin límite. Fiestas de más de 30 se sirven estilo buffet, y se puede agregar otro chef por un costo extra.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">Do you do parties under 15 guests?</span><span class="es">¿Hacen fiestas de menos de 15?</span></summary>
+        <p><span class="en">Yes. The 15-guest minimum price applies.</span><span class="es">Sí. Se aplica el precio mínimo de 15 invitados.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">Do you cook inside?</span><span class="es">¿Cocinan adentro?</span></summary>
+        <p><span class="en">No. For safety and smoke reasons we cook outdoors only: backyard, driveway or patio.</span><span class="es">No. Por seguridad y humo cocinamos solo al aire libre: patio, entrada o terraza.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">Is gratuity included?</span><span class="es">¿La propina está incluida?</span></summary>
+        <p><span class="en">No. Tipping is optional.</span><span class="es">No. La propina es opcional.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">How do I lock in my date?</span><span class="es">¿Cómo aseguro mi fecha?</span></summary>
+        <p><span class="en">A deposit secures your date. You can reschedule within 3 months of the original date.</span><span class="es">Un depósito asegura tu fecha. Puedes reprogramar dentro de los 3 meses de la fecha original.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">What if my headcount changes?</span><span class="es">¿Y si cambia el número de invitados?</span></summary>
+        <p><span class="en">The price stays the same if fewer guests show up. Extra guests who weren't announced are charged the menu price plus a $5 late fee per person.</span><span class="es">El precio se mantiene si llegan menos invitados. Invitados extra no anunciados pagan el precio del menú + $5 por persona.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">Is there a travel fee?</span><span class="es">¿Hay cargo por traslado?</span></summary>
+        <p><span class="en">It depends on your location in the Inland Empire. Text us your city to confirm.</span><span class="es">Varía según tu ubicación en el Inland Empire. Envíanos tu ciudad para confirmar.</span></p>
+      </details>
+      <details>
+        <summary><span class="en">What if someone is running late?</span><span class="es">¿Y si hay retrasos?</span></summary>
+        <p><span class="en">Customer delays over 30 minutes add a fee. If we're ever late, we compensate you based on the circumstances.</span><span class="es">Retrasos del cliente de más de 30 minutos tienen cargo. Si nosotros nos retrasamos, te compensamos según el caso.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINALE ============ -->
+<section class="finale">
+  <div class="finale__knock">
+    <video data-src="assets/video/fire2.mp4" poster="assets/img/fire2.jpg" muted loop playsinline preload="none"></video>
+    <div class="finale__mask">
+      <h2 class="finale__title"><span class="en">Light it up.</span><span class="es">¡A encender!</span></h2>
+    </div>
+  </div>
+  <div class="wrap finale__cta">
+    <p><span class="en">Your backyard, your people, Chef Jorge on the grill. Text him to lock in your date.</span><span class="es">Tu casa, tu gente y el Chef Jorge en la parrilla. Escríbele para asegurar tu fecha.</span></p>
+    <div class="finale__btns">
+      <a class="btn" href="#quote"><span class="en">Get my quote</span><span class="es">Cotizar ahora</span></a>
+      <a class="btn btn--ghost" href="tel:+19097255030">(909) 725-5030</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<div class="marquee marquee--dark" data-dir="-1" aria-hidden="true">
+  <div class="marquee__track">
+    <span>San Bernardino</span><b>✕</b><span>Riverside</span><b>✕</b><span>Fontana</span><b>✕</b><span>Rancho Cucamonga</span><b>✕</b><span>Redlands</span><b>✕</b><span>Ontario</span><b>✕</b><span>Rialto</span><b>✕</b><span>Moreno Valley</span><b>✕</b><span>Corona</span><b>✕</b><span>Victorville</span><b>✕</b>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <img src="assets/img/logo.png" alt="" width="56" height="56">
+      <p><b>Personal Hibachi</b><br><span class="en">Culinary artistry by Chef Jorge Galicia</span><span class="es">Arte culinario por el Chef Jorge Galicia</span></p>
+    </div>
+    <div class="foot__col">
+      <h4><span class="en">Contact</span><span class="es">Contacto</span></h4>
+      <a href="tel:+19097255030">(909) 725-5030</a>
+      <a href="https://instagram.com/personal.hibachi" target="_blank" rel="noopener">@personal.hibachi</a>
+      <a href="gallery.html"><span class="en">Video gallery</span><span class="es">Galería de videos</span></a>
+      <a href="https://www.google.com/maps/place/Personal+Hibachi/@34.840063,-116.2412198,11z/data=!4m10!1m2!2m1!1spersonal+hibachi!3m6!1s0xaa56a4e4ee2a54e1:0x3106ed95dee57a3c!8m2!3d34.840063!4d-115.966875!15sChBwZXJzb25hbCBoaWJhY2hpWhIiEHBlcnNvbmFsIGhpYmFjaGmSARBjYXRlcmluZ19zZXJ2aWNlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5NY1RsRVVYbDNSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F11vqhr338x" target="_blank" rel="noopener"><span class="en">Google reviews</span><span class="es">Reseñas en Google</span></a>
+    </div>
+    <div class="foot__col">
+      <h4><span class="en">Serving</span><span class="es">Servimos</span></h4>
+      <p><span class="en">The Inland Empire, across San Bernardino &amp; Riverside counties.</span><span class="es">El Inland Empire, en los condados de San Bernardino y Riverside.</span></p>
+    </div>
+  </div>
+  <p class="foot__legal wrap">© <span id="year">2026</span> Personal Hibachi</p>
+</footer>
+
+<!-- mobile action bar -->
+<nav class="mbar" aria-label="Quick actions">
+  <a href="#menu"><span class="en">Menu</span><span class="es">Menú</span></a>
+  <a href="#quote"><span class="en">Quote</span><span class="es">Cotizar</span></a>
+  <a class="mbar__cta" href="sms:+19097255030"><span class="en">Text Chef</span><span class="es">Escribir</span></a>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="assets/clips.js"></script>
+<script src="site.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    { "source": "/menu.html", "destination": "/#menu", "permanent": true },
+    { "source": "/info.html", "destination": "/#faq", "permanent": true },
+    { "source": "/heat.html", "destination": "/gallery.html", "permanent": true },
+    { "source": "/skill.html", "destination": "/gallery.html", "permanent": true },
+    { "source": "/party.html", "destination": "/gallery.html", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }]
+    }
+  ]
+}

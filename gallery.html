@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Video Gallery | Personal Hibachi</title>
+<meta name="description" content="Watch Chef Jorge's hibachi parties: fire tricks, fried rice, filet mignon and lobster, and backyard celebrations across the Inland Empire.">
+<meta name="theme-color" content="#0b0907">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://bookhibachi.com/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal Hibachi | Video Gallery">
+<meta property="og:description" content="Fire, flips and full tables. Watch Chef Jorge's backyard hibachi parties.">
+<meta property="og:image" content="https://bookhibachi.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://bookhibachi.com/gallery.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<header class="nav">
+  <a href="index.html" class="nav__brand" aria-label="Personal Hibachi home">
+    <img src="assets/img/logo.png" alt="" width="34" height="34">
+    <span>Personal Hibachi</span>
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="index.html#show"><span class="en">The Show</span><span class="es">El Show</span></a>
+    <a href="index.html#menu"><span class="en">Menu</span><span class="es">Menú</span></a>
+    <a href="gallery.html" aria-current="page"><span class="en">Gallery</span><span class="es">Galería</span></a>
+    <a href="index.html#quote"><span class="en">Quote</span><span class="es">Cotizar</span></a>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
+  <div class="nav__right">
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language / Cambiar idioma">
+      <span data-l="en">EN</span><i>/</i><span data-l="es">ES</span>
+    </button>
+    <a class="btn btn--sm" href="index.html#quote"><span class="en">Book</span><span class="es">Reservar</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="gal-hero">
+    <div class="wrap">
+      <p class="eyebrow"><span class="en">Video gallery</span><span class="es">Galería de videos</span></p>
+      <h1 class="gal-hero__title"><span class="en">The <em>Reel.</em></span><span class="es">El <em>Reel.</em></span></h1>
+      <div class="gal-hero__row">
+        <p class="gal-hero__sub"><span class="en">Real parties, real fire, no stock footage. Tap any video to watch it full screen with sound.</span><span class="es">Fiestas reales, fuego real, nada de videos de archivo. Toca cualquier video para verlo en pantalla completa con sonido.</span></p>
+        <p class="gal-hero__count" id="galCount"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="filters" role="group" aria-label="Filter videos" id="filters">
+      <button type="button" data-f="all" aria-pressed="true"><span class="en">All</span><span class="es">Todo</span><sup></sup></button>
+      <button type="button" data-f="new" aria-pressed="false"><span class="en">Newest</span><span class="es">Nuevos</span><sup></sup></button>
+      <button type="button" data-f="fire" aria-pressed="false"><span class="en">Fire</span><span class="es">Fuego</span><sup></sup></button>
+      <button type="button" data-f="food" aria-pressed="false"><span class="en">Food</span><span class="es">Comida</span><sup></sup></button>
+      <button type="button" data-f="party" aria-pressed="false"><span class="en">Parties</span><span class="es">Fiestas</span><sup></sup></button>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+  </section>
+
+  <section class="gal-cta">
+    <div class="wrap">
+      <h2 class="h2"><span class="en">Your party<br>is next.</span><span class="es">Tu fiesta<br>es la próxima.</span></h2>
+      <p><span class="en">Build a quote in 30 seconds and text it straight to Chef Jorge.</span><span class="es">Arma tu cotización en 30 segundos y envíala directo al Chef Jorge.</span></p>
+      <div class="finale__btns">
+        <a class="btn" href="index.html#quote"><span class="en">Get my quote</span><span class="es">Cotizar ahora</span></a>
+        <a class="btn btn--ghost" href="https://instagram.com/personal.hibachi" target="_blank" rel="noopener">@personal.hibachi ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <img src="assets/img/logo.png" alt="" width="56" height="56">
+      <p><b>Personal Hibachi</b><br><span class="en">Culinary artistry by Chef Jorge Galicia</span><span class="es">Arte culinario por el Chef Jorge Galicia</span></p>
+    </div>
+    <div class="foot__col">
+      <h4><span class="en">Contact</span><span class="es">Contacto</span></h4>
+      <a href="tel:+19097255030">(909) 725-5030</a>
+      <a href="https://instagram.com/personal.hibachi" target="_blank" rel="noopener">@personal.hibachi</a>
+    </div>
+    <div class="foot__col">
+      <h4><span class="en">Serving</span><span class="es">Servimos</span></h4>
+      <p><span class="en">The Inland Empire, across San Bernardino &amp; Riverside counties.</span><span class="es">El Inland Empire, en los condados de San Bernardino y Riverside.</span></p>
+    </div>
+  </div>
+  <p class="foot__legal wrap">© <span id="year">2026</span> Personal Hibachi</p>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a href="index.html#menu"><span class="en">Menu</span><span class="es">Menú</span></a>
+  <a href="index.html#quote"><span class="en">Quote</span><span class="es">Cotizar</span></a>
+  <a class="mbar__cta" href="sms:+19097255030"><span class="en">Text Chef</span><span class="es">Escribir</span></a>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="assets/clips.js"></script>
+<script src="site.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>
